@@ -6,6 +6,8 @@
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    max-width: 110px;
+    width: 50%;
 }
 
 .visualizar:hover{
@@ -36,7 +38,6 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    height: 100%;
 }
 
 .center{
@@ -47,10 +48,15 @@
 }
 
 .foto{
+    padding: 2px;
+    border-radius: 10%;
+    border: 5px, solid, rgb(100, 100, 100);
     width: 100%;
     margin-top: 20px;
-    max-width: 200px;
+    max-width: 250px;
+    max-height: 170px;
     object-fit: cover;
+    background-color: #E8E8E8;
 }
 
 .extended{
@@ -58,7 +64,9 @@
 }
 
 .max{
-    width: 100%;
+    width: 85%;
+    display: flex;
+    justify-content: start;
 }
 
 .redod{
@@ -70,6 +78,53 @@
 }
 
 h6{
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
+.linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+}
+
+.but{
+    border-radius: 15%;
+    border: none;
+    width: 10%;
+    font-size: 1.75rem;
+    font-weight: bold;
+    background-color: #949494;
+    color: #ffffff;
+}
+
+.but:hover{
+    scale: 1.05;
+    background-color: #868686;
+}
+
+.around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancelar {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    max-width: 110px;
+    width: 50%;
+}
+
+.cancelar:hover{
+    scale: 1.05;
+    background-color: #f1f1f1;
+}
+
+
+    

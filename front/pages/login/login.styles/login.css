@@ -25,6 +25,8 @@
 }
 
 h6{
+    font-weight: bold;
+    font-size: 1.1rem;
     text-align: start;
 }
 
@@ -32,6 +34,7 @@ h6{
     border-radius: 7px;
     border: none;
     background-color: #E8E8E8;
+    padding: 7px;
 }
 
 .butao{
@@ -58,4 +61,6 @@ h6{
     align-items: center;
     gap: 15px;
 }
+
+
 
