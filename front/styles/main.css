@@ -16,8 +16,9 @@ h5 {
     gap: 5px;
     margin-left: 40px;
     margin-top: 40px;
-
+    position: fixed;
     cursor: pointer;
+    z-index: 100;
 }
 
 .arrow {
