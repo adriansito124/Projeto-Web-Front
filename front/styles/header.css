@@ -1,0 +1,38 @@
+header {
+    background: rgb(34,133,155);
+    background: linear-gradient(117deg, rgba(34,133,155,1) 0%, rgba(128,255,149,1) 100%);
+    height: 100vh;
+    width: 10vw;
+
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    padding:  0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
+}

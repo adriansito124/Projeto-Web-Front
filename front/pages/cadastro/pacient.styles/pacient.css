@@ -1,0 +1,23 @@
+.visualizar {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+}
+
+
+#cards {
+    margin-top: 10%;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-img-top {
+    width: 80%;
+    margin-top: 10px;
+}

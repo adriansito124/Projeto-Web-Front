@@ -1,0 +1,59 @@
+.main{
+    background: linear-gradient(117deg, rgba(34,133,155,1) 0%, rgba(128,255,149,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.cardzin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #008F6E;
+    gap: 35px;
+}
+
+.max{
+    width: 100%;
+}
+
+.extended{
+    width: 75%;
+}
+
+h6{
+    text-align: start;
+}
+
+.redod{
+    border-radius: 7px;
+    border: none;
+    background-color: #E8E8E8;
+}
+
+.butao{
+    margin-top: 50px;
+    background-color: #008F6E;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.05rem;
+    padding: 9px;
+    width: 30%;
+    border-color: #008F6E;
+    border: #008F6E;
+}
+
+.foto{
+    margin-top: 20px;
+    max-width: 100px;
+}
+
+.meio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

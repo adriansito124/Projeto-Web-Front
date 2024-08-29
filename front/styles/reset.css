@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+
+}
+
+:root {
+    --verde-fonte: #008F6E;
+    --verdinho: #07A37E;
+}
