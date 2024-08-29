@@ -69,12 +69,26 @@
     justify-content: start;
 }
 
+.max2{
+    width: 60%;
+    display: flex;
+    justify-content: start;
+}
+
 .redod{
     border-radius: 5px;
     border: none;
     background-color: #E8E8E8;
     height: 40px;
     padding-left: 20px;
+}
+
+.redod2{
+    border-radius: 5px;
+    border: none;
+    background-color: #E8E8E8;
+    height: 40px;
+    padding-left: 10px;
 }
 
 h6{
@@ -86,7 +100,12 @@ h6{
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 20px;
+    gap: 30px;
+}
+.min{
+    width: 20%;
+    display: flex;
+    justify-content: start;
 }
 
 .but{
@@ -126,5 +145,37 @@ h6{
     background-color: #f1f1f1;
 }
 
+.colunas{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+.excluir{
+    border-radius: 15%;
+    border: none;
+    width: 10%;
+    font-size: 1.75rem;
+    font-weight: bold;
+    background-color: #e45555;
+    color: #ffffff;
+}
+
+.excluir:hover{
+    scale: 1.05;
+    background-color: rgb(214, 48, 48);
+}
     
+.reto2{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.reto{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}

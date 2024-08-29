@@ -52,7 +52,7 @@
             <span class="material-symbols-outlined arrow">arrow_back_ios</span>
             <h5>Minhas Receitas</h5>
         </div>
-        <div class="meio">
+        <form class="meio">
             <div class="card d-flex flex-column align-items-center" style="width: 30rem; gap: 40px;">
                 <img src="../../img/icons/imagen.jpg" class="card-img-top foto" alt="...">
                 <div class="card-body d-flex flex-column align-items-start" style="width: 100%; gap: 35px;">
@@ -66,6 +66,17 @@
                             <input class="max redod" type="text" placeholder="Digite aqui...">
                             <button class="but">+</button>
                         </div>
+
+                        <!-- INGREDIENTES -->
+                        <div class="colunas">
+                            <div class="linha">
+                                <input class="min redod2 reto2" type="number" value="1">
+                                <div class="max2 redod reto" type="text">Ovo</div>
+                                <button class="excluir">X</button>
+                            </div>
+                        </div>
+                        <!-- INGREDIENTES -->
+
                     </div>
                     <div class="extended">
                         <h6>Passo a Passo</h6>
@@ -73,14 +84,24 @@
                             <input class="max redod" type="text" placeholder="Digite aqui...">
                             <button class="but">+</button>
                         </div>
+
+                        <!-- PASSOS -->
+                        <div class="colunas">
+                            <div class="linha">
+                                <div class="max redod reto" type="text">Assar</div>
+                                <button class="excluir">X</button>
+                            </div>
+                        </div>
+                        <!-- PASSOS -->
+
                     </div>
                     <div class="extended around">
-                    <button class="cancelar">CANCELAR</button>
-                    <button class="visualizar">CRIAR</button>
-                </div>
+                        <button type="submit" class="cancelar">CANCELAR</button>
+                        <button type="submit" class="visualizar">CRIAR</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
 </body>
 
