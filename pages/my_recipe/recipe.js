@@ -6,7 +6,9 @@ function renderizarPacientes() {
 
     Array.from(data).forEach(recipe => {
 
-        let ingred =  recipe.ingrediente.map(ing => `<h2>${ing}</h2>`).join('');
+
+
+        let ingred =  recipe.ingrediente.map((ing, index) => `<h2>${recipe.quantidade[index]} - ${ing}</h2>`).join('');
 
         let passos = recipe.passos.map((step, index) => `<h2>${index+1}. ${step}</h2>`).join('');
 
