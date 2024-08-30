@@ -20,7 +20,11 @@
 
     <!-- ESTILIZAÇÃO PRÓRPIA -->
 
-    <link rel="stylesheet" href="./cad_nutri.styles/cad_nutri.css">
+    <link rel="stylesheet" href="./styles/cad_nutri.css">
+
+    <!-- SCRIPTS -->
+
+    <script src="./scripts/requests.js" type="module" defer></script>
 
     <title>Meus Pacientes</title>
 </head>
@@ -54,17 +58,21 @@
                   <h3 class="card-title">Joaquim da Silva</h5>
                     <div class="extended">
                         <h6>Nome</h6>
-                        <input class="extended redod" type="text" placeholder="Digite aqui...">
+                        <input id="name" class="extended redod" type="text" placeholder="Digite aqui...">
+                    </div>
+                    <div class="extended">
+                        <h6>CRN</h6>
+                        <input id="CRN" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Email</h6>
-                        <input class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="email" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Senha</h6>
-                        <input class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
-                  <button class="visualizar">CADASTRAR</button>
+                  <button onclick="postNutri()" class="visualizar">CADASTRAR</button>
                 </div>
             </div>
         </div>
