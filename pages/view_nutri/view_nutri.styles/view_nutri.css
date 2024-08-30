@@ -1,0 +1,45 @@
+.visualizar {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+}
+
+
+#cards {
+    margin-top: 5%;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-img-top {
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+.visualizar2 {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    max-width: 240px;
+    width: 100%;
+}
+
+.visualizar2:hover{
+    scale: 1.05;
+    background-color: #119173;
+}
+
+h5{
+    color: white;
+}
