@@ -1,0 +1,36 @@
+[
+    {
+        "recipeID": 1,
+        "nome": "Almondega de lentilha",
+
+        "ingrediente": [
+            "xícara de lentilha cozida",
+            "dente de alho picado",
+            " colher de sopa de cebola picada",
+            "colheres de sopa de farinha de rosca",
+            "coentro",
+            "sal",
+            "pimenta",
+            "azeite"
+        ],
+
+        "passos": [
+            "Leve uma panela ao fogo médio e refogue o alho e a cebola no azeite. Em seguida junte a lentilha cozida e misture para pegar o sabor do refogado.",
+            "Coloque no processador com os demais ingredientes. Como falamos no início da receita, adicione a farinha de rosca aos poucos até chegar na textura desejada.",
+            "Bata bem até conseguir formar uma bolinha com a massa.",
+            "Modele bolinhas no tamanho que desejar.",
+            "Coloque de volta na panela usada anteriormente com um fio de azeite e doure as almondegas de lentilha. Se você preferir pode fazer essa parte no forno."
+        ],
+        
+        "quantidade": [
+            1,
+            1,
+            1,
+            4,
+            1,
+            1,
+            1,
+            1
+        ]
+    }
+]

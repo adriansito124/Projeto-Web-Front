@@ -21,6 +21,7 @@
     <!-- ESTILIZAÇÃO PRÓRPIA -->
 
     <link rel="stylesheet" href="./pacient.styles/pacient.css">
+    <script src="./pacient.js" type="module"></script>
 
     <title>Meus Pacientes</title>
 </head>
@@ -47,16 +48,8 @@
             <span class="material-symbols-outlined arrow">arrow_back_ios</span>
             <h5>Meus Pacientes</h5>
         </div>
-        <div class="container">
-            <div id="cards" class="row d-flex flex-wrap justify-content-center">
-                <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
-                    <img src="#" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column align-items-center">
-                      <h5 class="card-title">Joaquim da Silva</h5>
-                      <a href="#" class="btn visualizar">VISUALIZAR</a>
-                    </div>
-                </div>
-            </div>
+        <div id="cards" class="container" style="flex-wrap: wrap; display: flex; flex-direction: row; justify-content: space-between;">
+
         </div>
     </main>
 </body>

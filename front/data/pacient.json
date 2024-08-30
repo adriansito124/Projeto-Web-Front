@@ -1,0 +1,94 @@
+[
+    {
+        "userid": 1,
+        "nome": "joaquim da silva",
+        "email": "joaquim@email.com",
+        "password": "12345",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 1,
+        "nome": "joaquim da silva",
+        "email": "joaquim@email.com",
+        "password": "12345",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    }    
+
+    ,
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 1,
+        "nome": "joaquim da silva",
+        "email": "joaquim@email.com",
+        "password": "12345",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    }    
+
+    ,
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 1,
+        "nome": "joaquim da silva",
+        "email": "joaquim@email.com",
+        "password": "12345",
+        "tipo": 2,
+        "ativo": true
+    },
+    {
+        "userid": 2,
+        "nome": "Pedro Pereira",
+        "email": "pedro@email.com",
+        "password": "54321",
+        "tipo": 2,
+        "ativo": true
+    } 
+]
