@@ -37,7 +37,7 @@ async function signIn() {
     localStorage.setItem("token", data.token)
 
     if (response.ok) {
-        window.location.href = "../pages/paciente/"
+        window.location.href = "../pages/admin/TOKEN"
     }
 }
 window.signIn = signIn;
