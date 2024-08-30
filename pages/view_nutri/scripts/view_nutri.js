@@ -1,25 +1,32 @@
-import data from "../../data/pacient.json" with { type: "json" }
+import data from "../../../data/pacient.json" with { type: "json" }
 
-function renderizarPacientes() {
+import { getNutri} from "./requests.js";
+
+async function renderizarPacientes() {
+    
     console.log("oioi");
+
     let cards = document.getElementById("cards");
-    let dados = fetch("../../data.json")
-    Array.from(data).forEach(paciente => {
-        cards.insertAdjacentHTML("beforeend",
-            `<div id="cards" class="row d-flex flex-wrap justify-content-center">
-                <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
-                    <img src="#" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column align-items-center">
-                      <h5 class="card-title">${paciente.nome}</h5>
-                      <a href="#" class="btn visualizar">EDITAR</a>
+
+    const nutris = await getNutri();
+
+    if (Array.from(nutris).length = 0) {
+        cards.insertAdjacentHTML("beforeend", `<p>sem nutris</p>`)
+    } else {
+        Array.from(nutris).forEach( nutri => {
+            cards.insertAdjacentHTML("beforeend",
+                `<div id="cards" class="row d-flex flex-wrap justify-content-center">
+                    <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
+                        <img src="#" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column align-items-center">
+                          <h5 class="card-title">${nutri.nutricionistID}</h5>
+                          <a href="#" class="btn visualizar">EDITAR</a>
+                        </div>
                     </div>
-                </div>
-            </div>`
-        )
-    });
+                </div>`)
+        })
+    }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", renderizarPacientes())
 
