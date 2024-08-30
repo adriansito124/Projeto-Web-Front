@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="./new_receita.styles/cad_receita.css">
 
+    <script src="./receita.js"></script>
+
     <title>Meus Pacientes</title>
 </head>
 
@@ -63,17 +65,13 @@
                     <div class="extended">
                         <h6>Ingredientes</h6>
                         <div class="linha">
-                            <input class="max redod" type="text" placeholder="Digite aqui...">
-                            <button class="but">+</button>
+                            <input id="input-ingredient" class="max redod" type="text" placeholder="Digite aqui...">
+                            <button onclick="adicionarIngrediente(event)" class="but">+</button>
                         </div>
 
                         <!-- INGREDIENTES -->
-                        <div class="colunas">
-                            <div class="linha">
-                                <input class="min redod2 reto2" type="number" value="1">
-                                <div class="max2 redod reto" type="text">Ovo</div>
-                                <button class="excluir">X</button>
-                            </div>
+                        <div id="ingredients" class="colunas">
+
                         </div>
                         <!-- INGREDIENTES -->
 
@@ -81,16 +79,13 @@
                     <div class="extended">
                         <h6>Passo a Passo</h6>
                         <div class="linha">
-                            <input class="max redod" type="text" placeholder="Digite aqui...">
-                            <button class="but">+</button>
+                            <input id="input-step" class="max redod" type="text" placeholder="Digite aqui...">
+                            <button onclick="adicionarPasso(event)" class="but">+</button>
                         </div>
 
                         <!-- PASSOS -->
-                        <div class="colunas">
-                            <div class="linha">
-                                <div class="max redod reto" type="text">Assar</div>
-                                <button class="excluir">X</button>
-                            </div>
+                        <div id="steps" class="colunas">
+
                         </div>
                         <!-- PASSOS -->
 

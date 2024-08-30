@@ -11,6 +11,8 @@ function adicionarIngrediente(event) {
     colunas.innerHTML = "";
 
     ingredientes.push(valor);
+    
+    document.getElementById("input-ingredient").value = "";
 
     console.log(ingredientes);
 
@@ -24,6 +26,8 @@ function adicionarIngrediente(event) {
             </div>`
         )
     })
+
+    
 }
 
 function deletarIngrediente(index) {
@@ -34,13 +38,13 @@ function deletarIngrediente(index) {
 
     console.log(ingredientes);
 
-    ingredientes.forEach((ingrediente, index) => {
+    ingredientes.forEach((ingrediente, i) => {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
                     <input class="min redod2 reto2" type="number" value="1">
                     <div class="max2 redod reto" type="text">${ingrediente}</div>
-                    <button id="${index}" onclick="deletar(${index})" class="excluir">X</button>
+                    <button  onclick="deletarIngrediente(${i})" class="excluir">X</button>
             </div>`
         )
     })
@@ -57,6 +61,8 @@ function adicionarPasso(event) {
 
     passos.push(valor);
 
+    document.getElementById("input-step").value = "";
+
     console.log(passos);
 
     passos.forEach((passo, index) => {
@@ -68,6 +74,7 @@ function adicionarPasso(event) {
             </div>`
         )
     })
+
 }
 
 function deletarPasso(index) {
@@ -78,12 +85,12 @@ function deletarPasso(index) {
 
     console.log(passos);
 
-    passos.forEach((passo, index) => {
+    passos.forEach((passo, i) => {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <div class="max redod reto" type="text">${index+1}- ${passo}</div>
-                <button id="${index}" class="excluir">X</button>
+                <div class="max redod reto" type="text">${i+1}- ${passo}</div>
+                <button onclick="deletarPasso(${i})" class="excluir">X</button>
             </div>`
         )
     })
