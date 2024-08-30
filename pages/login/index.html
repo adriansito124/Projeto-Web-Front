@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
     <!-- BOOTSTRAP -->
 
-
+    <link rel="stylesheet" href="./styles/login.css">
 
     <!-- FONTE NUNITO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@
         rel="stylesheet">
     <!-- FONTE NUNITO -->
 
+    <script src="./scripts/requests.js" type="module" defer></script>
 </head>
 
 <body>
@@ -35,19 +36,17 @@
                     <img src="../../img/icons/logo colorida.png" class="foto" alt="...">
                     <h2>Faça login em sua conta!</h2>
                 </div>
-                <form class="card-body cardzin max">
-                    
+                <div class="card-body cardzin max">
                     <div class="extended">
                         <h6>Email</h6>
-                        <input class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="email" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Senha</h6>
-                        <input class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
-                    <button type="submit" class="butao">ENTRAR</button>
-
-                </form>
+                    <button id="login-btn" onclick="signIn()" class="butao">ENTRAR</button>
+                </div>
             </div>
         </div>
     </main>
