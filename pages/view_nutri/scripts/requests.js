@@ -17,4 +17,4 @@ export async function getNutri() {
     return await response.json()
 }
 
-// window.getNutri = getNutri;
+window.getNutri = getNutri;
