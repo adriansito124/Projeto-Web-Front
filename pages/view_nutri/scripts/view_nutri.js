@@ -1,17 +1,18 @@
-import data from "../../../data/pacient.json" with { type: "json" }
 
 import { getNutri} from "./requests.js";
 
-async function renderizarPacientes() {
+async function renderizarNutri() {
     
     console.log("oioi");
 
     let cards = document.getElementById("cards");
 
     const nutris = await getNutri();
+    console.log(nutris);
+    
 
-    if (Array.from(nutris).length = 0) {
-        cards.insertAdjacentHTML("beforeend", `<p>sem nutris</p>`)
+    if (nutris.length == 0) {
+        cards.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary" role="alert">Sem nutricionistas cadastrados.</p>`)
     } else {
         Array.from(nutris).forEach( nutri => {
             cards.insertAdjacentHTML("beforeend",
@@ -28,7 +29,7 @@ async function renderizarPacientes() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", renderizarPacientes())
+document.addEventListener("DOMContentLoaded", renderizarNutri())
 
 
 

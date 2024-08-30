@@ -11,7 +11,6 @@ async function signIn() {
         {
             method: "POST",
             headers: {
-                "Authporizatoin": token,
                 "Content-Type": "application/json"
             },
             // infelizmente, precisamos mandar o body da requisição como uma string
@@ -23,21 +22,15 @@ async function signIn() {
         }
     )    
 
-    const token = Token.sign(
-        { id: user.id, type: user.userType },
-        "secret",
-        {  }
-    )
-
     const data = await response.json();
-    console.log('Token:', data.token);
+
     console.log(response.status);
     console.log(response.headers);
 
     localStorage.setItem("token", data.token)
 
     if (response.ok) {
-        window.location.href = "../pages/admin/TOKEN"
+        window.location.href = "../view_nutri/"
     }
 }
 window.signIn = signIn;

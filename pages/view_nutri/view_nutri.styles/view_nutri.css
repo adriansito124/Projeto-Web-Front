@@ -4,9 +4,13 @@
     color: #07A37E;
 }
 
+#no-nutri {
+
+}
+
 
 #cards {
-    margin-top: 5%;
+    margin-top: 30%;
 }
 
 .card {
@@ -31,8 +35,14 @@
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
     max-width: 240px;
     width: 100%;
+}
+
+.visualizar2 > h5 {
+    color: white;
 }
 
 .visualizar2:hover{

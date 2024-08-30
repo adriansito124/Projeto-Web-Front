@@ -1,7 +1,6 @@
-async function getNutri() {
+const baseurl = "http://localhost:3000"
 
-    const email = document.getElementById("email").value
-    const password = document.getElementById("password").value
+export async function getNutri() {
 
     // fazendo a requisição completa, endpoint com headers e body
     const response = await fetch(
@@ -9,6 +8,7 @@ async function getNutri() {
         {
             method: "GET",
             headers: {
+                "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
         }
@@ -16,4 +16,5 @@ async function getNutri() {
 
     return await response.json()
 }
-window.signIn = signIn;
+
+// window.getNutri = getNutri;
