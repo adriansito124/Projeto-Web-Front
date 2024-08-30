@@ -40,6 +40,10 @@
     background-color: #119173;
 }
 
-h5{
+.h5{
     color: white;
+}
+
+.organ{
+    font-size: 1.3rem;
 }
