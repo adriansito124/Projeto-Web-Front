@@ -18,9 +18,10 @@ async function renderizarNutri() {
             cards.insertAdjacentHTML("beforeend",
                 `<div id="cards" class="row d-flex flex-wrap justify-content-center">
                     <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
-                        <img src="#" class="card-img-top" alt="...">
+                        <img src="../../img/ratinho-perfil.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column align-items-center">
-                          <h5 class="card-title">${nutri.nutricionistID}</h5>
+                          <h5 class="card-title">${nutri.name}</h5>
+                          <h5 class="card-title">${nutri.Nutricionist.CRN}</h5>
                           <a href="#" class="btn visualizar">EDITAR</a>
                         </div>
                     </div>
