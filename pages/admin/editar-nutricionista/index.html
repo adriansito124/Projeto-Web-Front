@@ -20,7 +20,7 @@
 
     <!-- ESTILIZAÇÃO PRÓRPIA -->
 
-    <link rel="stylesheet" href="./styles/cad-nutri.css">
+    <link rel="stylesheet" href="../cadastrar-nutricionista/styles/cad-nutri.css">
 
     <!-- SCRIPTS -->
 
@@ -29,6 +29,10 @@
     <title>Meus Pacientes</title>
 </head>
 <body>
+    <script>
+        console.log(new URLSearchParams(window.location.search).get("nutriID"))
+    </script>
+
     <header>
         <nav>
             <div id="action-buttons-1">
@@ -55,14 +59,14 @@
             <div class="card d-flex flex-column align-items-center" style="width: 30rem;">
                 <img src="../../img/icons/logo colorida.png" class="card-img-top foto" alt="...">
                 <div class="card-body d-flex flex-column align-items-center" style="width: 100%; gap: 35px;">
-                  <h3 class="card-title">Joaquim da Silva</h5>
+                  <h3 id="card-title" class="card-title">Joaquim da Silva</h5>
                     <div class="extended">
                         <h6>Nome</h6>
                         <input id="name" class="extended redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>CRN</h6>
-                        <input id="CRN" class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="CRN" class="maxid redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Email</h6>
@@ -72,7 +76,7 @@
                         <h6>Senha</h6>
                         <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
-                  <button onclick="postNutri()" class="visualizar">CADASTRAR</button>
+                  <button onclick="updateNutri()" class="visualizar">CADASTRAR</button>
                 </div>
             </div>
         </div>

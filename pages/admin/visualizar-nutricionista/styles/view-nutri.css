@@ -52,3 +52,9 @@
 .organ{
     font-size: 1.3rem;
 }
+
+#action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

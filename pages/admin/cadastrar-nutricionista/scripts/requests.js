@@ -32,7 +32,7 @@ export async function postNutri() {
     console.log(response.headers);
 
     if (response.ok) {
-        window.location.href = "../view_nutri/"
+        window.location.href = "../visualizar-nutricionista/"
         
     }
 }
