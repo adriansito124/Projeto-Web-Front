@@ -23,14 +23,29 @@ async function signIn() {
     )    
 
     const data = await response.json();
-
-    console.log(response.status);
-    console.log(response.headers);
-
+    
     localStorage.setItem("token", data.token)
-
+    localStorage.setItem("userInfo", JSON.stringify(data.userInfo))
+    
     if (response.ok) {
-        window.location.href = "../view_nutri/"
+        switch (data.userInfo.userType) {
+            case 0:
+                window.location.href = "../admin/visualizar-nutricionista"
+                break;
+
+            case 1:
+                window.location.href = "../nutricionista/meus-pacientes/"
+                break;
+
+            case 2:
+                window.location.href = "../paciente/home/"
+                break;
+            default:
+                break;
+        }
+        console.log(data);
     }
-}
+
+}   
+
 window.signIn = signIn;

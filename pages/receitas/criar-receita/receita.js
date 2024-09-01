@@ -42,9 +42,9 @@ function deletarIngrediente(index) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                    <input class="min redod2 reto2" type="number" value="1">
-                    <div class="max2 redod reto" type="text">${ingrediente}</div>
-                    <button  onclick="deletarIngrediente(${i})" class="excluir">X</button>
+                <input disabled class="min redod2 reto2" type="number" value="1">
+                <div class="max2 redod reto" type="text">${ingrediente}</div>
+                <button  onclick="deletarIngrediente(${i})" class="excluir">X</button>
             </div>`
         )
     })
