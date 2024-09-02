@@ -38,7 +38,7 @@ async function signIn() {
                 break;
 
             case 2:
-                window.location.href = "../paciente/home/"
+                window.location.href = "../paciente/minha-dieta/"
                 break;
             default:
                 break;
