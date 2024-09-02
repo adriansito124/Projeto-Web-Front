@@ -30,8 +30,15 @@
     margin-top: 10px;
 }
 
-.meio{
+.main{
+    width: 100%;
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meio{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -40,9 +47,25 @@
 
 .visual{
     display: flex;
-    justify-content: space-between;
-    width: 90%;
-    align-items: start;
+    justify-content: end;
+    width: 30%;
+}
+
+.visual2{
+    display: flex;
+    align-items: end;
+    width: 40%;
+    flex-direction: column;
+}
+
+.reto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+    font-weight: bold;
 }
 
 .center{
@@ -85,3 +108,29 @@ h6{
     font-weight: bold;
 }
 
+.gigainfo{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.info{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.metas{
+    display: flex;
+    flex-direction: column;
+}
+
+.caloria{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
