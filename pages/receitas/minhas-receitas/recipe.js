@@ -1,4 +1,4 @@
-import data from "../../data/recipe.json" with { type: "json" }
+import data from "../../../data/recipe.json" with { type: "json" }
 
 function renderizarPacientes() {
     console.log("oioi");

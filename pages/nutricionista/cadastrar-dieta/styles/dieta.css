@@ -1,8 +1,10 @@
 .visualizar {
-    background-color: #07A37E;
-    border: 1px solid #07A37E;
+    background-color: #333333;
+    border: 1px solid #353535;
     color: white;
     padding: 7px;
+    width: 100%;
+    max-width: 150px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -10,7 +12,7 @@
 
 .visualizar:hover{
     scale: 1.05;
-    background-color: #119173;
+    background-color: #474747;
 }
 
 #cards {
@@ -48,13 +50,13 @@
 .visual{
     display: flex;
     justify-content: end;
-    width: 30%;
+    width: 80%;
 }
 
 .visual2{
     display: flex;
-    align-items: end;
-    width: 40%;
+    align-items: center;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -92,6 +94,10 @@ h2{
 }
 
 .max{
+    width: 40%;
+}
+
+.maximo{
     width: 100%;
 }
 
@@ -126,11 +132,59 @@ h6{
 .metas{
     display: flex;
     flex-direction: column;
+    width: 25%;
+    gap: 20px;
+}
+
+.metas2{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 25px;
 }
 
 .caloria{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    gap: 30px;
+    gap: 25px;
 }
+
+.borda{
+    border: 2px, solid, #07A37E;
+    text-align: center;
+    border-radius: 8px;
+    color: #07A37E;
+}
+
+.borda2{
+    border: 2px, solid, #07A37E;
+    text-align: center;
+    border-radius: 8px;
+    color: #07A37E;
+    width: 75%;
+}
+
+.centrol{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.divide{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.metade{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
