@@ -11,8 +11,10 @@ function adicionarIngrediente(event) {
 
     colunas.innerHTML = "";
 
-    ingredientes.push(valor);
-    quantidade.push(qtd);
+    ingredientes.push({"name" : valor, "quantity": qtd})
+
+    // ingredientes.push(valor);
+    // quantidade.push(qtd);
     
     document.getElementById("input-ingredient").value = "";
 
@@ -22,8 +24,8 @@ function adicionarIngrediente(event) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                    <div id="qtd" class="min redod2 reto2" type="number">${qtd}</div>
-                    <div class="max2 redod reto" type="text">${ingrediente}</div>
+                    <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}</div>
+                    <div class="max2 redod reto" type="text">${ingrediente.name}</div>
                     <button id="${index}" onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
         )
@@ -34,7 +36,7 @@ function adicionarIngrediente(event) {
 
 function deletarIngrediente(index) {
     ingredientes.splice(index, 1);
-    quantidade.splice(index, 1); // Remover a quantidade associada
+    // quantidade.splice(index, 1); // Remover a quantidade associada
 
     atualizarIngredientes();
 }
@@ -46,8 +48,8 @@ function atualizarIngredientes() {
     ingredientes.forEach((ingrediente, index) => {
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <div id="qtd" class="min redod2 reto2" type="number">${quantidade[index]}</div>
-                <div class="max2 redod reto" type="text">${ingrediente}</div>
+                <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}</div>
+                <div class="max2 redod reto" type="text">${ingrediente.name}</div>
                 <button onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
         )
