@@ -1,16 +1,18 @@
 var ingredientes = [];
 var passos = [];
-var qtd = [];
+var quantidade = [];
 
 function adicionarIngrediente(event) {
     event.preventDefault();
     console.log("aiai");
     let valor = document.getElementById("input-ingredient").value;
+    let qtd = document.getElementById("quanti").value;
     let colunas = document.getElementById("ingredients");
 
     colunas.innerHTML = "";
 
     ingredientes.push(valor);
+    quantidade.push(qtd);
     
     document.getElementById("input-ingredient").value = "";
 
@@ -20,7 +22,7 @@ function adicionarIngrediente(event) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                    <input id="qtd" class="min redod2 reto2" type="number" value="1">
+                    <div id="qtd" class="min redod2 reto2" type="number">${qtd}</div>
                     <div class="max2 redod reto" type="text">${ingrediente}</div>
                     <button id="${index}" onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
@@ -32,24 +34,26 @@ function adicionarIngrediente(event) {
 
 function deletarIngrediente(index) {
     ingredientes.splice(index, 1);
+    quantidade.splice(index, 1); // Remover a quantidade associada
 
+    atualizarIngredientes();
+}
+
+function atualizarIngredientes() {
     let colunas = document.getElementById("ingredients");
     colunas.innerHTML = "";
 
-    console.log(ingredientes);
-
-    ingredientes.forEach((ingrediente, i) => {
-
+    ingredientes.forEach((ingrediente, index) => {
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <input disabled class="min redod2 reto2" type="number" value="1">
+                <div id="qtd" class="min redod2 reto2" type="number">${quantidade[index]}</div>
                 <div class="max2 redod reto" type="text">${ingrediente}</div>
-                <button  onclick="deletarIngrediente(${i})" class="excluir">X</button>
+                <button onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
         )
-    })
-
+    });
 }
+
 
 function adicionarPasso(event) {
     event.preventDefault();
