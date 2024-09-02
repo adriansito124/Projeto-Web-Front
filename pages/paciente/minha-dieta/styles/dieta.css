@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+#bread-crumbs {
+    position: absolute;
+    top: 0%;
+    position: fixed;
+}

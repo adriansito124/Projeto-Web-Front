@@ -33,7 +33,6 @@ export async function postNutri() {
 
     if (response.ok) {
         window.location.href = "../visualizar-nutricionista/"
-        
     }
 }
 

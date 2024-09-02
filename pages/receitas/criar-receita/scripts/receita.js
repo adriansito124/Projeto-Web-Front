@@ -1,6 +1,5 @@
-var ingredientes = [];
-var passos = [];
-var quantidade = [];
+export var ingredientes = [];
+export var passos = []; 
 
 function adicionarIngrediente(event) {
     event.preventDefault();
@@ -65,7 +64,7 @@ function adicionarPasso(event) {
 
     colunas.innerHTML = "";
 
-    passos.push(valor);
+    passos.push({"description": valor});
 
     document.getElementById("input-step").value = "";
 
@@ -75,7 +74,7 @@ function adicionarPasso(event) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <div class="max redod reto" type="text">${index+1}- ${passo}</div>
+                <div class="max redod reto" type="text">${index+1}- ${passo.description}</div>
                 <button id="${index}" onclick="deletarPasso(${index})" class="excluir">X</button>
             </div>`
         )
@@ -102,3 +101,9 @@ function deletarPasso(index) {
     })
 
 }
+
+window.adicionarIngrediente = adicionarIngrediente
+window.deletarIngrediente = deletarIngrediente
+window.atualizarIngredientes = atualizarIngredientes
+window.adicionarPasso = adicionarPasso
+window.deletarPasso = deletarPasso

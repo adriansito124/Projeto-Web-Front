@@ -26,7 +26,8 @@
 
     <link rel="stylesheet" href="./styles/cad_receita.css">
 
-    <script src="./receita.js"></script>
+    <script type="module" src="./scripts/receita.js" defer></script>
+    <script type="module" src="./scripts/requests.js" defer></script>
 
     <title>Meus Pacientes</title>
 </head>
@@ -60,7 +61,7 @@
                 <div class="card-body d-flex flex-column align-items-start" style="width: 100%; gap: 35px;">
                     <div class="extended">
                         <h6>Nome da Receita</h6>
-                        <input class="extended redod" type="text" placeholder="Digite aqui...">
+                        <input id="nome_receita" class="extended redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Ingredientes</h6>
@@ -92,8 +93,8 @@
 
                     </div>
                     <div class="extended around">
-                        <button type="submit" class="cancelar">CANCELAR</button>
-                        <button type="submit" class="visualizar">CRIAR</button>
+                        <button class="cancelar" type="button" >CANCELAR</button>
+                        <button onclick="postReceita(event)" type="button" class="visualizar">CRIAR</button>
                     </div>
                 </div>
             </div>
