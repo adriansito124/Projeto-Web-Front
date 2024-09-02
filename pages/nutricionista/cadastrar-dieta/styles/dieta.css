@@ -31,10 +31,17 @@
 }
 
 .meio{
-    margin-top: 80px;
+    margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: start;
+}
+
+.visual{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
     align-items: start;
 }
 
@@ -48,8 +55,13 @@
 .foto{
     width: 100%;
     margin-top: 20px;
-    max-width: 200px;
+    max-width: 280px;
     object-fit: cover;
+}
+
+.photo{
+    display: flex;
+    width: 70%;
 }
 
 .extended{
