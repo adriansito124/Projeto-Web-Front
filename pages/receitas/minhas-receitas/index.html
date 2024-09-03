@@ -19,21 +19,20 @@
     <link rel="stylesheet" href="../../../styles/reset.css">
 
     <!-- ESTILIZAÇÃO PRÓRPIA -->
-
-    <link rel="stylesheet" href="./styles/cad-paciente.css">
+     <link rel="stylesheet" href="./styles/recipes.css">
 
     <!-- SCRIPTS -->
+     <script type="module" defer src="./scripts/renderRecipes.js"></script>
+     <script type="module" defer src="./scripts/requests.js"></script>
 
-    <script src="./scripts/requests.js" type="module" defer></script>
-
-    <title>Cadastrar Paciente</title>
+<title>Minhas Receitas</title>
 </head>
 <body>
     <header>
         <nav>
             <div id="action-buttons-1">
                 <ul>
-                    <li><a href="../meus-pacientes/"><img class="nav-icon" src="../../../img/icons/id-card-clip-alt.png" alt="meus-pacientes"></a></li>
+                    <li><a href="../../nutricionista/meus-pacientes/"><img class="nav-icon" src="../../../img/icons/id-card-clip-alt.png" alt="meus-pacientes"></a></li>
                     <li><a href="../../receitas/minhas-receitas"><img class="nav-icon" src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
                 </ul>
             </div>  
@@ -46,30 +45,11 @@
     </header>
     <main>
         <div id="bread-crumbs">
-            <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
-            <h5>Cadastrar Paciente</h5>
+            <span class="material-symbols-outlined arrow">arrow_back_ios</span>
+            <h5>Minhas Receitas</h5>
         </div>
-        <div class="meio">
-            <div class="card d-flex flex-column align-items-center" style="width: 30rem;">
-                <div class="card-body d-flex flex-column align-items-center" style="width: 100%; gap: 35px;">
-                    <div class="extended">
-                        <h6>Nome</h6>
-                        <input id="name" class="extended redod" type="text" placeholder="Digite aqui...">
-                    </div>
-                    <div class="extended">
-                        <h6>Email</h6>
-                        <input id="email" class="max redod" type="text" placeholder="Digite aqui...">
-                    </div>
-                    <div class="extended">
-                        <h6>Senha</h6>
-                        <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
-                    </div>
-                    <form id="dataForm" action="../cadastrar-dieta/" method="GET">
-                        <button onclick="postPacient(event)" type="button" class="btn visualizar">CADASTRAR</button>
-                        <input type="hidden" id="pacientInfo" name="pacientID" value="">
-                    </form>
-                </div>
-            </div>
+        <div class="container" id="recipes-div">
+
         </div>
     </main>
 </body>

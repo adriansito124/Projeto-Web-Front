@@ -1,33 +1,40 @@
-import data from "../../../data/recipe.json" with { type: "json" }
+import { getRecipe } from "./scripts/requests.js";
 
-function renderizarPacientes() {
+export async function renderRecipe(event) {
+    event.preventDefault()
     console.log("oioi");
     let corpo = document.getElementById("corpo");
 
-    Array.from(data).forEach(recipe => {
+    const recipe = await getRecipe();
 
+    console.log(recipe);
 
+    let title = document.getElementById("title").innerText = recipe.name
+    
 
-        let ingred =  recipe.ingrediente.map((ing, index) => `<h2>${recipe.quantidade[index]} - ${ing}</h2>`).join('');
+    let ing = document.getElementById("ing-id")
 
-        let passos = recipe.passos.map((step, index) => `<h2>${index+1}. ${step}</h2>`).join('');
-
-        corpo.insertAdjacentHTML("beforeend",
-            `<div class="max">
-                <div class="ing">🥕 INGREDIENTES</div>
-                <div class="ajustado">
-                    <h2>${ingred}</h2>
-                </div>
+    recipe.RecipeIngredients.forEach( element => {
+        ing.insertAdjacentHTML("beforeend", `
+            <div class="d-flex flex-row gap-3">
+                <h4>${element.name} </h4>
+                <h4>${element.quantity} g</h4>
             </div>
-            <div class="max">
-                <div class="prep">🍲 MODO DE PREPARO</div>
-                <div class="ajustado">
-                    <h2>${passos}</h2>
-                </div>
-            </div>`
-        )
+        `)
     });
+
+    let step = document.getElementById("step-id")
+
+    recipe.RecipeSteps.forEach( element => {
+        step.insertAdjacentHTML("beforeend", `
+            <div class="d-flex flex-row gap-3">
+                <h4>${element.stepNumber}. </h4>
+                <h4>${element.description}</h4>
+            </div>
+        `)
+    });
+
 }
 
 
-document.addEventListener("DOMContentLoaded", renderizarPacientes())
+document.addEventListener("DOMContentLoaded", renderRecipe)

@@ -1,12 +1,31 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
 .visualizar {
     background-color: #FFFF;
     border: 1px solid #07A37E;
     color: #07A37E;
 }
 
+#bread-crumbs {
+    position: absolute;
+    top: 0%;
+    position: fixed;
+}
+
+
 
 #cards {
-    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .card {
@@ -20,6 +39,26 @@
 .card-img-top {
     width: 80%;
     margin-top: 10px;
+}
+
+.visualizar {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.visualizar:hover{
+    scale: 1.05;
+    background-color: #119173;
+    color: white;
+}
+
+h5 {
+    color: white;
 }
 
 

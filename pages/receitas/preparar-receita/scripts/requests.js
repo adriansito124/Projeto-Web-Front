@@ -2,11 +2,13 @@ const baseurl = "http://localhost:3000"
 
 export async function getRecipe() {
 
-    console.log("oioioi");
+    const id = new URLSearchParams(window.location.search).get("recipeID");
+
+    console.log(id);
     
     // fazendo a requisição completa, endpoint com headers e body
     const response = await fetch(
-        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/dieta`,
+        `${baseurl}/user/${id}/visualizar-receita`,
         {
             method: "GET",
             headers: {
@@ -19,8 +21,4 @@ export async function getRecipe() {
     return await response.json()
 }
 
-export function teste() {
-    console.log("oioioi")
-}
-
-window.getDiet = getDiet
+window.getRecipe = getRecipe

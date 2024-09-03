@@ -33,29 +33,26 @@
     <title>Minha dieta</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="action-buttons-1">
-                <ul>
-                    <li><a><img class="nav-icon" src="../../img/icons/medical-records.png" alt=""></a></li>
-                    <li><a><img class="nav-icon" src="../../img/icons/recipe-book.png" alt=""></a></li>
-                </ul>
-            </div>  
-            <div id="action-buttons-2">
-                <ul>
-                    <li><a><img class="nav-icon" src="../../img/icons/recipe-book.png" alt=""></a></li>
-                    <li><a><img class="nav-icon" src="../../img/icons/recipe-book.png" alt=""></a></li>
-                    <li><a><img class="nav-icon" src="../../img/icons/recipe-book.png" alt=""></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+        <div id="action-buttons-1">
+            <ul>
+                <li><a href="#"><img class="nav-icon" src="../../../img/icons/medical-records.png" alt="dieta"></a></li>
+                <li><a href="../../receitas/minhas-receitas"><img class="nav-icon" src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
+                <li><a href="../../paciente/calendario"><img class="nav-icon" src="../../../img/icons/" alt="calendario"></a></li>
+            </ul>
+        </div>  
+        <div id="action-buttons-2">
+            <ul>
+                <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png" alt="sair"></a></li>
+            </ul>
+        </div>
+    </nav>
+  </header>
     <main>
         <div id="bread-crumbs">
             <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
             <h5>Minha Dieta</h5>
-        </div>
-        <div class="container">
         </div>
         <div id="diet-recipes" class="container">
             <div class="accordion" id="accordionExample">
@@ -104,6 +101,10 @@
                     </div>
                   </div>
               </div>
+              <form id="dataForm1" action="../../receitas/preparar-receita/" method="GET">
+                <button type="submit" class="btn visualizar">TESTE</button>
+                <input type="hidden" name="recipeID" value="1">
+            </form>
         </div>
     </main>
 </body>
