@@ -24,7 +24,7 @@ const diet = await renderDiet();
 console.log(diet);
 
 
-var receitas = diet.DietRecipes;
+export var receitas = diet.DietRecipes;
 console.log(receitas);
 
 document.getElementById("calories").value = diet.totalCalories;
@@ -88,7 +88,7 @@ function adicionarReceita(periodo, selectId, recipeContainerId) {
 
         colunas.innerHTML = "";
 
-        receitas.push({ "period": periodoFromSelect, "recipeID": valor, "name": valor1 });
+        receitas.push({ "period": periodoFromSelect, "recipeID": Number(valor), "name": valor1 });
 
         console.log(receitas);
 

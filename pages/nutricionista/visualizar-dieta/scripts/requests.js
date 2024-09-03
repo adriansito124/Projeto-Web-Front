@@ -1,3 +1,5 @@
+import { receitas } from "./dieta.js";
+
 const baseurl = "http://localhost:3000"
 
 export async function renderDiet() {
@@ -17,29 +19,28 @@ export async function renderDiet() {
 
 };
 
-export async function updateNutri() {
+export async function updateDiet() {
 
-    const name = document.getElementById("name").value
-    const CRN = document.getElementById("CRN").value
-    const email = document.getElementById("email").value
-    const password = document.getElementById("password").value
-
-    console.log(password)
+    const calories = document.getElementById("calories").value
+    const water = document.getElementById("water").value
+    const protein = document.getElementById("protein").value
+    const carbs = document.getElementById("carbs").value
+    const fat = document.getElementById("fat").value
+    const newRecipes = receitas;
 
     const id = new URLSearchParams(window.location.search).get("nutriID");
 
     const body = {
-        name,
-        CRN, 
-        email
+        calories: calories, 
+        water: water, 
+        protein: protein, 
+        carbs: carbs, 
+        fat: fat, 
+        recipes: newRecipes
     } 
-    
-    if (password.length > 0) {
-        body.password = password
-    }
 
     const response = await fetch(
-        `${baseurl}/admin/editar/${id}`,
+        `${baseurl}/nutri/update/`,
         {
             method: "PATCH",
             headers: {
@@ -52,7 +53,7 @@ export async function updateNutri() {
     )    
 
     if (response.ok) {
-        window.location.href = "../visualizar-nutricionista/"
+        window.location.href = "../meus-pacientes/"
         
     } else {
         // toastify
@@ -62,3 +63,4 @@ export async function updateNutri() {
 window.addEventListener("DOMContentLoaded", renderDiet());
 
 window.renderDiet = renderDiet;
+window.updateDiet = updateDiet;
