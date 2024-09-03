@@ -28,7 +28,7 @@
 
     <!-- SCRIPTS -->
 
-    <script src="./scripts/requests.js" type="module" defer></script>
+    <script src="./dieta.js" type="module" defer></script>
 
 
     <title>Criar Dieta</title>
@@ -65,7 +65,7 @@
                 <div class="visual2">
                     <div class="reto">
                         <img src="../../../img/Penguins.jpg" class="foto" alt="...">
-                        <h2>Joaquim Silva</h2>
+                        <h2 id="paciente">Joaquim Silva</h2>
                     </div>
                 </div>
 
@@ -110,25 +110,61 @@
             <div class="centrol">
                 <h4 class="borda2">RECEITAS</h4>
             </div>
-            <div class="info" style="margin-top: 20px;">
+            <div class="info2" style="margin-top: 20px;">
                 <div class="metas2">
-                    <div>
+                    <div class="gapz">
                         <h6>Café da manhã</h6>
-                        <div class="maximo redod reto"></div>
+                        <select onchange="adicionarReceitaManha(event)" id="manha" class="maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                            <option period="manha" value="Salada de Fruta">Salada de Fruta</option>
+                            <option period="manha" value="Banana Split">Banana Split</option>
+                            <option period="manha" value="Podrão (x-tudo recheado com outro x-tudo)">Podrão (x-tudo recheado com outro
+                                x-tudo)</option>
+                        </select>
+                        <div id="recipe_manha" class="gapz">
+                        </div>
                     </div>
-                    <div>
+                    <div class="gapz">
                         <h6>Café da tarde</h6>
-                        <div class="maximo redod reto"></div>
+                        <select onchange="adicionarReceitaTarde(event)" id="tarde" class="maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                            <option period="tarde" value="Salada de Fruta">Salada de Fruta</option>
+                            <option period="tarde" value="Banana Split">Banana Split</option>
+                            <option period="tarde" value="Podrão (x-tudo recheado com outro x-tudo)">Podrão (x-tudo recheado com outro
+                                x-tudo)</option>
+                        </select>
+                        <div id="recipe_tarde" class="gapz">
+                        </div>
                     </div>
                 </div>
                 <div class="metas2">
-                    <div>
+                    <div class="gapz">
                         <h6>Almoço</h6>
-                        <div class="maximo redod reto"></div>
+                        <select onchange="adicionarReceitaAlmoco(event)" id="almoco" class="maximo redod reto"
+                            placeholder="Selecione">
+                            <option period="aumoço" hidden>Selecione</option>
+                            <option period="almoco" value="Salada de Fruta">Salada de Fruta</option>
+                            <option period="almoco" value="Banana Split">Banana Split</option>
+                            <option period="almoco" value="Podrão (x-tudo recheado com outro x-tudo)">Podrão (x-tudo recheado com outro
+                                x-tudo)</option>
+                        </select>
+                        <div id="recipe_almoco" class="gapz">
+                        </div>
                     </div>
-                    <div>
+                    <div class="gapz">
                         <h6>Janta</h6>
-                        <div class="maximo redod reto"></div>
+                        <select onchange="adicionarReceitaNoite(event)" id="noite" class="maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                            <option period="noite" value="Salada de Fruta">Salada de Fruta</option>
+                            <option period="noite" value="Banana Split">Banana Split</option>
+                            <option period="noite" value="Podrão (x-tudo recheado com outro x-tudo)">Podrão (x-tudo recheado com outro
+                                x-tudo)</option>
+                        </select>
+                        <div id="recipe_noite" class="gapz">
+                        </div>
                     </div>
                 </div>
             </div>
