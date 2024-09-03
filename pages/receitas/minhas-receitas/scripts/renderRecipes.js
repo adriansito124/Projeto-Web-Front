@@ -6,6 +6,10 @@ export async function renderRecipes() {
 
     let div = document.getElementById("recipes-div");
 
+    if (recipes.length == 0) {
+        div.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary" role="alert">Sem receitas cadastradas.</p>`)
+    } 
+
     recipes.forEach(element => {
         
         div.insertAdjacentHTML("beforeend", `

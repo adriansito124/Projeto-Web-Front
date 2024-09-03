@@ -2,13 +2,16 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    min-height: 100vh;
+    /* position: relative; */
 }
 
 #bread-crumbs {
     position: absolute;
     top: 0%;
     position: fixed;
+    padding: 0;
+    margin: 0;
 }
 
 .accordion-body {
@@ -33,4 +36,19 @@ main {
     scale: 1.05;
     background-color: #119173;
     color: white;
+}
+
+#greetings {
+    display: flex;
+    align-items: center;
+}
+
+#greetings > h3 {
+    color: var(--verde-fonte);
+}
+
+.img-greetings {
+    max-width: 35px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }

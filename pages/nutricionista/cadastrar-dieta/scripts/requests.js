@@ -1,24 +1,44 @@
+import { receitas } from "./dieta.js";
+
 const baseurl = "http://localhost:3000"
 
-export async function getDiet() {
+export async function postDiet() {
 
-    console.log("oioioi");
     
-    console.log(JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID);
+    const pacientID = new URLSearchParams(window.location.search).get("pacientID");
 
-    // fazendo a requisição completa, endpoint com headers e body
+    const calories = document.getElementById("calories").value
+    const water = document.getElementById("water").value
+    const protein = document.getElementById("protein").value
+    const carbs = document.getElementById("carbs").value
+    const fat = document.getElementById("fat").value
+
     const response = await fetch(
-        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/dieta`,
+        `${baseurl}/nutri/${JSON.parse(localStorage.getItem("userInfo")).Nutricionist.nutricionistID}/criar-dieta/${pacientID}`,
         {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
-            }
+            },
+            
+            body: JSON.stringify({
+                calories: calories, 
+                water: water, 
+                protein: protein, 
+                carbs: carbs, 
+                fat: fat, 
+                recipes: receitas
+            })
         }
-    )
+    )    
 
-    return await response.json()
+    const data = await response.json()
+
+    if (response.ok) {
+        window.location.href = "../meus-pacientes"
+    }
+
 }
 
-window.getDiet = getDiet
+window.postDiet = postDiet

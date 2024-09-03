@@ -4,6 +4,12 @@ async function renderDiet() {
 
     const diet = await getDiet();
 
+    console.log(diet);
+
+    document.getElementById("greetings").insertAdjacentHTML("beforeend", `
+        <h3>Bem-vindo(a) de volta, <b>${JSON.parse(localStorage.getItem("userInfo")).name}</b><img class="img-greetings" src="../../../img/maozinha.png" alt="sair"></h3>    
+    `)
+
     const firstAccordion = document.getElementById("1-accordion")
     const secondAccordion = document.getElementById("2-accordion")
     const thirdAccordion = document.getElementById("3-accordion")
@@ -13,19 +19,19 @@ async function renderDiet() {
 
     diet.DietRecipes.forEach( element => {
         switch (element.period) {
-            case "cafézim":
+            case "manha":
                 accordionBody = firstAccordion
                 break;
 
-            case "aumoço":
+            case "almoco":
                 accordionBody = secondAccordion;
                 break;
 
-            case "cafézim da tarde":
+            case "tarde":
                 accordionBody = thirdAccordion;
                 break;
 
-            case "janta":
+            case "noite":
                 accordionBody = fourthAccordion;
             break;
         

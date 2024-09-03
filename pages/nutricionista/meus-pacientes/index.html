@@ -26,7 +26,7 @@
     <title>Meus Pacientes</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
             <div id="action-buttons-1">
                 <ul>
@@ -42,15 +42,17 @@
         </nav>
     </header>
     <main>
+        <div id="greetings" class="container">
+        </div>
         <div id="bread-crumbs">
-            <span class="material-symbols-outlined arrow">arrow_back_ios</span>
+            <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
             <h5>Meus Pacientes</h5>
         </div>
-        <div id="cards" class="container" style="flex-wrap: wrap; display: flex; flex-direction: row; justify-content: space-between;">
+        <div id="cards-div">
 
         </div>
         <div style="display: flex; justify-content:center">
-            <button onclick="window.location.href = '../cadastrar-paciente'" class="visualizar organ"><h5 style="text-align: start;">+</h5><h5>NOVO</h5></button>
+            <button onclick="window.location.href = '../cadastrar-paciente'" class="visualizar2 organ"><h5 style="text-align: start;">+</h5><h5>NOVO</h5></button>
         </div>
     </main>
 </body>

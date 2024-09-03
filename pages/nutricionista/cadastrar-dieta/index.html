@@ -28,7 +28,8 @@
 
     <!-- SCRIPTS -->
 
-    <script src="./dieta.js" type="module" defer></script>
+    <script src="./scripts/dieta.js" type="module" defer></script>
+    <script src="./scripts/requests.js" type="module" defer></script>
 
 
     <title>Criar Dieta</title>
@@ -74,11 +75,11 @@
                         <h4 class="borda">METAS</h4>
                         <div class="caloria">
                             <h6>Calorias diárias</h6>
-                            <input type="number" class="max redod reto" placeholder="1000">
+                            <input id="calories" type="number" class="max redod reto" placeholder="1000">
                         </div>
                         <div class="caloria">
                             <h6>Ingestão de água</h6>
-                            <input type="number" class="max redod reto" placeholder="1000">
+                            <input id="water" type="number" class="max redod reto" placeholder="1000">
                         </div>
                     </div>
                     <div class="metas">
@@ -87,17 +88,17 @@
                                 <div class="metade">
                                     <div class="caloria">
                                         <h6>Proteínas</h6>
-                                        <input type="number" class="max redod reto" placeholder="1000">
+                                        <input id="protein" type="number" class="max redod reto" placeholder="1000">
                                     </div>
                                     <div class="caloria">
                                         <h6>Carboidrato</h6>
-                                        <input type="number" class="max redod reto" placeholder="1000">
+                                        <input id="carbs" type="number" class="max redod reto" placeholder="1000">
                                     </div>
                                 </div>
                                 <div class="metade">
                                     <div class="caloria">
                                         <h6>Gordura</h6>
-                                        <input type="number" class="max redod reto" placeholder="1000">
+                                        <input id="fat" type="number" class="max redod reto" placeholder="1000">
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +151,9 @@
                     </div>
                 </div>
             </div>
-
+            <div id="criar-novo" style="display: flex; justify-content:center">
+                <button onclick="postDiet()" class="visualizar organ"><h5 class="button-h5" style="text-align: start;"> + </h5><h5 class="button-h5" > NOVO </h5></button>
+            </div>
         </div>
     </main>
 </body>

@@ -1,23 +1,26 @@
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+    justify-content: end;
     
 }
 
-.visualizar {
-    background-color: #FFFF;
-    border: 1px solid #07A37E;
-    color: #07A37E;
-}
-
 #bread-crumbs {
-    position: absolute;
+    /* position: absolute; */
     top: 0%;
     position: fixed;
 }
 
+#cards-div {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    height: 100%;
+    margin-top: 5%;
+    
+}
 
 
 #cards {
@@ -25,7 +28,8 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* margin-top: 30px; */
+    /* width: 100%; */
 }
 
 .card {
@@ -51,14 +55,108 @@ main {
     justify-content: center;
 }
 
-.visualizar:hover{
-    scale: 1.05;
-    background-color: #119173;
+.visualizar:hover {
+    background-color: #078669;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-h5 {
     color: white;
 }
 
-h5 {
+
+#no-nutri {
+    align-self: center;
+}
+
+#action-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+#criar-novo {
+    margin-bottom: 50px;
+}
+
+.visualizar {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin: 10px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-img-top {
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+.visualizar2 {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 100%;
+}
+
+.visualizar2 > h5 {
     color: white;
 }
+
+.visualizar2:hover{
+    scale: 1.05;
+    background-color: #119173;
+}
+
+.h5{
+    color: white;
+}
+
+.organ{
+    font-size: 1.3rem;
+    margin: 50px 0;
+}
+
+#action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#greetings {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#greetings > h3 {
+    color: var(--verde-fonte);
+}
+
+.img-greetings {
+    max-width: 35px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
 
 
