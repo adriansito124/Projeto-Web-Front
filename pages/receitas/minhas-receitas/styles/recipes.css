@@ -2,24 +2,27 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
-    /* position: relative; */
+    gap: 10%;
+
+    height: 100vh;
 }
 
 #bread-crumbs {
     position: absolute;
     top: 0%;
     position: fixed;
-    padding: 0;
-    margin: 0;
 }
 
-.accordion-body {
+#recipes-div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10%;
+}
+
+#no-nutri {
+    align-self: center;
 }
 
 .visualizar {
@@ -38,17 +41,6 @@ main {
     color: white;
 }
 
-#greetings {
-    display: flex;
-    align-items: center;
-}
-
-#greetings > h3 {
-    color: var(--verde-fonte);
-}
-
-.img-greetings {
-    max-width: 35px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+.button-h5 {
+    color: white;
 }

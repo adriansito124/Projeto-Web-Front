@@ -4,7 +4,11 @@ async function renderizarPacientes() {
     
     console.log("oioi");
 
-    let cards = document.getElementById("cards");
+    document.getElementById("greetings").insertAdjacentHTML("beforeend", `
+        <h3>Bem-vindo(a) de volta, <b>${JSON.parse(localStorage.getItem("userInfo")).name}</b><img class="img-greetings" src="../../../img/maozinha.png" alt="sair"></h3>    
+    `)
+
+    let cards = document.getElementById("cards-div");
 
     const pacientes = await getPacients();
     console.log(pacientes);
@@ -20,7 +24,7 @@ async function renderizarPacientes() {
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">${paciente.name}</h5>
                             <div id="action-buttons">
-                                <form id="dataForm" action="../visualizar-paciente/" method="GET">
+                                <form id="dataForm" action="../cadastrar-dieta/" method="GET">
                                     <button type="submit" class="btn visualizar">VISUALIZAR</button>
                                     <input type="hidden" name="pacientID" value="${paciente.userID}">
                                 </form>

@@ -1,7 +1,7 @@
 .foto{
     padding: 2px;
-    border-radius: 10%;
-    border: 5px, solid, rgb(100, 100, 100);
+    border-radius: 0%;
+    /* border: 5px, solid, rgb(100, 100, 100); */
     width: 100%;
     margin-top: 20px;
     max-width: 250px;
@@ -13,6 +13,7 @@
 .card-img-top {
     width: 80%;
     margin-top: 10px;
+    border: none;
 }
 
 .extended{

@@ -1,49 +1,21 @@
-import { ingredientes, passos } from "./receita.js"
+
 
 const baseurl = "http://localhost:3000"
 
-function teste() {
-    console.log("teste uhul");
-}
-
-export async function postReceita(event) {
-
-    event.preventDefault()
-    console.log(ingredientes);
-    console.log(passos);
-    console.log("oioiooioi");
-
-    const name = document.getElementById("nome_receita").value
+export async function getRecipes() {
 
     const response = await fetch(
-
-        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/criar-receita`,
+        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/receitas`,
         {
-            method: "POST",
+            method: "GET",
             headers: {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                name: name,
-                ingredients: ingredientes,
-                steps: passos
-            })
+            }
         }
     )
 
-    
-    if (response.ok) {
-        if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
-
-            window.location.href = "../minhas-receitas"
-        } else {
-            window.location.href = "../minhas-receitas"
-
-        }
-    }
-
+    return await response.json()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -68,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <nav>
                 <div id="action-buttons-1">
                     <ul>
-                        <li><a href="#"><img class="nav-icon" src="../../../img/icons/medical-records.png" alt="dieta"></a></li>
+                        <li><a href="../../paciente/minha-dieta"><img class="nav-icon" src="../../../img/icons/medical-records.png" alt="dieta"></a></li>
                         <li><a href="../../receitas/minhas-receitas"><img class="nav-icon" src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
                         <li><a href="../../paciente/calendario"><img class="nav-icon" src="../../../img/icons/" alt="calendario"></a></li>
                     </ul>
@@ -83,6 +55,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-
-window.teste = teste
-window.postReceita = postReceita
+window.getRecipes = getRecipes
