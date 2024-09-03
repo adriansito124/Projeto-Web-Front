@@ -1,27 +1,39 @@
-import { getDiet, teste } from "./requests";
+import { getDiet, teste } from "./requests.js";
 
 async function renderDiet() {
 
     const diet = await getDiet();
 
-    teste
+    console.log(diet);
+
+    document.getElementById("greetings").insertAdjacentHTML("beforeend", `
+        <h3>Bem-vindo(a) de volta, <b>${JSON.parse(localStorage.getItem("userInfo")).name}</b><img class="img-greetings" src="../../../img/maozinha.png" alt="sair"></h3>    
+    `)
 
     const firstAccordion = document.getElementById("1-accordion")
     const secondAccordion = document.getElementById("2-accordion")
-    const thirdAccordion = document.getElementById("3-accordion").insertAdjacentHTML("beforeend", `<p>${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}</p>`)
+    const thirdAccordion = document.getElementById("3-accordion")
     const fourthAccordion = document.getElementById("4-accordion")
     
     var accordionBody;
 
     diet.DietRecipes.forEach( element => {
         switch (element.period) {
-            case "aumoço":
+            case "manha":
                 accordionBody = firstAccordion
                 break;
 
-            case "janta":
+            case "almoco":
                 accordionBody = secondAccordion;
                 break;
+
+            case "tarde":
+                accordionBody = thirdAccordion;
+                break;
+
+            case "noite":
+                accordionBody = fourthAccordion;
+            break;
         
             default:
                 break;
@@ -34,9 +46,9 @@ async function renderDiet() {
                     <div class="card-body d-flex flex-column align-items-center">
                         <h5 class="card-title">${element.name}</h5>
                         <div id="action-buttons">
-                        <form id="dataForm" action="../receitas/preparar-receita" method="GET">
-                            <button type="submit" class="btn visualizar">PREPARAR</button>
-                            <input type="hidden" id="recipeInfo" name="recipeID" value="${element.recipeID}">
+                        <form id="dataForm" action="../../receitas/preparar-receita/" method="GET">
+                            <button type="submit" class="btn visualizar">TESTE</button>
+                            <input type="hidden" name="recipeID" value="${element.recipeID}">
                         </form>
                         </div>
                     </div>

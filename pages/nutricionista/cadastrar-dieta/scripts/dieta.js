@@ -1,3 +1,26 @@
+import { getRecipes } from "../../../receitas/minhas-receitas/scripts/requests.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
+    let selects = Array.from(document.getElementsByClassName("receitas-nutri"));
+
+    try {
+        const recipes = await getRecipes();
+        console.log(recipes);
+
+        selects.forEach(select => {
+            recipes.forEach(recipe => {
+                select.insertAdjacentHTML("beforeend", `
+                    <option period="${select.getAttribute("id")}" value="${recipe.recipeID}">${recipe.name}</option>
+                `);
+            });
+        });
+
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+    }
+});
+
+
 export var receitas = [];
 
 
@@ -8,10 +31,12 @@ function adicionarReceitaManha(event) {
     let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_manha");
     let valor = select.value
+    let valor1 = select.options[select.selectedIndex].text
+
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor })
+    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -26,7 +51,7 @@ function adicionarReceitaManha(event) {
         if (receita.period == "manha") {
             colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo redod reto margem">
-                <h6 class="alinhaa">${receita.recipeID}</h6>
+                <h6 class="alinhaa">${receita.name}</h6>
             </div>`
         )
         }
@@ -34,6 +59,9 @@ function adicionarReceitaManha(event) {
     })
 
     colunas.scrollIntoView({ behavior: 'smooth' });
+
+    select.value = 'Selecione'
+
 }
 
 
@@ -44,10 +72,11 @@ function adicionarReceitaTarde(event) {
     let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_tarde");
     let valor = select.value
+    let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor })
+    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -62,7 +91,7 @@ function adicionarReceitaTarde(event) {
         if (receita.period == "tarde") {
            colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.recipeID}</h6>
+                <h6 class="alinhaa">${receita.name}</h6>
             </div>`
         ) 
         }
@@ -70,6 +99,9 @@ function adicionarReceitaTarde(event) {
     })
 
     colunas.scrollIntoView({ behavior: 'smooth' });
+
+    select.value = 'Selecione'
+
 }
 
 function adicionarReceitaAlmoco(event) {
@@ -79,10 +111,12 @@ function adicionarReceitaAlmoco(event) {
     let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_almoco");
     let valor = select.value
+    let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor })
+    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
+
 
 
     // ingredientes.push(valor);
@@ -97,7 +131,7 @@ function adicionarReceitaAlmoco(event) {
         if (receita.period == "almoco") {
            colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.recipeID}</h6>
+                <h6 class="alinhaa">${receita.name}</h6>
             </div>`
         ) 
         }
@@ -105,6 +139,9 @@ function adicionarReceitaAlmoco(event) {
     })
 
     colunas.scrollIntoView({ behavior: 'smooth' });
+
+    select.value = 'Selecione'
+
 }
 
 function adicionarReceitaNoite(event) {
@@ -114,10 +151,11 @@ function adicionarReceitaNoite(event) {
     let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_noite");
     let valor = select.value
+    let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor })
+    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -132,13 +170,15 @@ function adicionarReceitaNoite(event) {
         if (receita.period == "noite") {
             colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.recipeID}</h6>
+                <h6 class="alinhaa">${receita.name}</h6>
             </div>`
             )
         }
     })
 
     colunas.scrollIntoView({ behavior: 'smooth' });
+
+    select.value = 'Selecione'
 }
 
 

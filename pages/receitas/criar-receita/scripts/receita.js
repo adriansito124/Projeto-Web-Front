@@ -102,6 +102,8 @@ function deletarPasso(index) {
 
 }
 
+
+
 window.adicionarIngrediente = adicionarIngrediente
 window.deletarIngrediente = deletarIngrediente
 window.atualizarIngredientes = atualizarIngredientes
