@@ -1,0 +1,180 @@
+.foto {
+    padding: 2px;
+    border-radius: 100%;
+    border: 5px, solid, rgb(100, 100, 100);
+    width: 100%;
+    margin-top: 20px;
+    max-width: 260px;
+    max-height: 260px;
+    object-fit: cover;
+    background-color: #E8E8E8;
+}
+
+.card-img-top {
+    width: 80%;
+    margin-top: 10px;
+}
+
+.extended {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.corpo {
+    width: 100%;
+    padding-left: 120px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+}
+
+
+.ing {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    max-width: 160px;
+    width: 100%;
+}
+
+.prep {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    max-width: 200px;
+    width: 100%;
+}
+
+.max {
+    width: 100%;
+}
+
+.ajustado {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 5px;
+}
+
+.config {
+    width: 90%;
+    margin-top: 100px;
+    background-color: #DADADA;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.redod {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E8E8E8;
+    height: 60px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+h4 {
+    margin-top: 10px;
+}
+
+.butao {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+
+.butao:hover {
+    scale: 1.05;
+    background-color: rgb(228, 227, 227);
+}
+
+.mode {
+    width: 100%;
+    max-width: 50px;
+    height: 100%;
+    max-height: 50px;
+}
+
+.lapis {
+    width: 100%;
+    height: 100%;
+}
+
+.claro {
+    background-image: url("../../../../img/icons/claro.png");
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+    max-height: 50px;
+    border: none;
+    background-color: transparent;
+    transition: background-image 0.12s ease, transform 0.3s ease;
+}
+
+.a {
+    font-weight: bold;
+}
+
+.claro:hover{
+    background-image: url("../../../../img/icons/hover.png");
+}
+
+.escuro:hover{
+    background-image: url("../../../../img/icons/hover.png");
+}
+
+.escuro {
+    background-image: url("../../../../img/icons/dark.png");
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+    max-height: 50px;
+    border: none;
+    background-color: transparent;
+    transition: background-image 0.12s ease, transform 0.3s ease;
+}
+
+@keyframes ligar {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes desligar {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}

@@ -24,11 +24,11 @@
 
     <!-- ESTILIZAÇÃO PRÓRPIA -->
 
-    <link rel="stylesheet" href="./styles/recipe.css">
+    <link rel="stylesheet" href="./styles/perfil.css">
 
-    <script src="./recipe.js" type="module"></script>
+    
 
-    <title>Meus Pacientes</title>
+    <title>Perfil</title>
 </head>
 
 <body>
@@ -52,17 +52,26 @@
     <main>
         <div id="bread-crumbs">
             <span class="material-symbols-outlined arrow">arrow_back_ios</span>
-            <h5>Minhas Receitas</h5>
+            <h5>Perfil</h5>
         </div>
         <div class="extended">
-            <img class="card-img-top foto" src="../../../img/user.png">
-            <h1>Frango Teriyaki</h1>
-            <div id="corpo" class="corpo">
-                
+            <img class="card-img-top foto" src="../../../img/ratinho-perfil.jpg">
+            <h1>Joaquim Silva</h1>
+            <h4>Joaquim@email</h4>
+            <div class="config">
+                <div class="redod">
+                    <h4 class="a">DARK MODE</h4>
+                    <button onclick="troca()" id="mod" class="claro"></button>
+                </div>
+                <div class="redod">
+                    <h4 class="a">EDITAR PERFIL</h4>
+                    <button class="butao"><img class="lapis" src="../../../img/icons/edit.png"></button>
+                </div>
             </div>
         </div>
-
     </main>
+
+    <script src="./perfil.js"></script>
 </body>
 
 </html>
