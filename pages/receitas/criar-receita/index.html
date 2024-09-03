@@ -44,18 +44,24 @@
             <h5>Minhas Receitas</h5>
         </div>
         <form class="meio">
-            <div class="card d-flex flex-column align-items-center" style="width: 30rem; gap: 40px;">
+            <div class="card d-flex flex-column align-items-center w-50" style="width: 30rem; gap: 40px;">
                 <img src="../../../img/comida-adrian.jpg" class="card-img-top foto" alt="...">
                 <div class="card-body d-flex flex-column align-items-start" style="width: 100%; gap: 35px;">
                     <div class="extended">
                         <h6>Nome da Receita</h6>
-                        <input id="nome_receita" class="extended redod" type="text" placeholder="Digite aqui...">
+                        <input id="nome_receita" class="extended redod form-control" type="text" placeholder="Digite aqui...">
                     </div>
                     <div class="extended">
                         <h6>Ingredientes</h6>
                         <div class="linha">
-                            <input id="quanti" class="min redod2 reto2" style="text-align: center;" type="number" value="1">
-                            <input id="input-ingredient" class="max2 redod" type="text" placeholder="Digite aqui...">
+                            <input id="quanti" class="min redod2 reto2 form-control" style="text-align: center;" type="number" value="1">
+                            <select id="medida" class="form-select" aria-label="Default select example">
+                                <option value="g">g</option>
+                                <option value="Kg">Kg</option>
+                                <option value="L">L</option>
+                                <option value="un">un</option>
+                              </select>
+                            <input id="input-ingredient" class="max2 redod form-control" type="text" placeholder="Digite aqui...">
                             <button onclick="adicionarIngrediente(event)" class="but">+</button>
                         </div>
 
@@ -69,7 +75,7 @@
                     <div class="extended">
                         <h6>Passo a Passo</h6>
                         <div class="linha">
-                            <input id="input-step" class="max redod" type="text" placeholder="Digite aqui...">
+                            <input id="input-step" class="max redod form-control" type="text" placeholder="Digite aqui...">
                             <button onclick="adicionarPasso(event)" class="but">+</button>
                         </div>
 

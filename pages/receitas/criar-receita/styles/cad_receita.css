@@ -100,8 +100,8 @@ h6{
 .linha{
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 20px;
 }
 .min{
     width: 20%;
@@ -112,7 +112,7 @@ h6{
 .but{
     border-radius: 15%;
     border: none;
-    width: 10%;
+    width: 45px;
     font-size: 1.75rem;
     font-weight: bold;
     background-color: #949494;
@@ -179,4 +179,27 @@ h6{
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+}
+
+.form-select {
+    width: 15%;
+    background-color: #E8E8E8;
+}
+
+.form-control {
+    background-color: #E8E8E8;
+    font-size: 1.2rem;
+}
+
+.form-control:focus {
+
+    background-color: #E8E8E8;
+}
+
+#quanti {
+    width: 90px;
+}
+
+#input-ingredient {
+    width: 300px;
 }

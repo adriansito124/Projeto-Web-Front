@@ -6,16 +6,18 @@ function adicionarIngrediente(event) {
     console.log("aiai");
     let valor = document.getElementById("input-ingredient").value;
     let qtd = document.getElementById("quanti").value;
+    let medida = document.getElementById("medida").value;
     let colunas = document.getElementById("ingredients");
 
     colunas.innerHTML = "";
 
-    ingredientes.push({"name" : valor, "quantity": qtd})
+    ingredientes.push({"name" : valor, "quantity": qtd, "measure": medida})
 
     // ingredientes.push(valor);
     // quantidade.push(qtd);
     
     document.getElementById("input-ingredient").value = "";
+    document.getElementById("quanti").value = "1";
 
     console.log(ingredientes);
 
@@ -23,8 +25,8 @@ function adicionarIngrediente(event) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                    <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}</div>
-                    <div class="max2 redod reto" type="text">${ingrediente.name}</div>
+            <div class="max2 redod reto" type="text">${ingrediente.name}</div>
+                    <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}  ${ingrediente.measure} </div>
                     <button id="${index}" onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
         )
