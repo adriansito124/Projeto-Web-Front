@@ -64,6 +64,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 h2{
@@ -126,7 +127,14 @@ h6{
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    
+}
+
+.info2{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 2%;
 }
 
 .metas{
@@ -188,3 +196,13 @@ h6{
     gap: 20px;
 }
 
+.gapz{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alinhaa{
+    width: 100%;
+    text-align: start;
+}
