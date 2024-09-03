@@ -1,3 +1,26 @@
+import { getRecipes } from "../../receitas/minhas-receitas/scripts/requests.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
+    let selects = Array.from(document.getElementsByClassName("receitas-nutri"));
+
+    try {
+        const recipes = await getRecipes();
+        console.log(recipes);
+
+        selects.forEach(select => {
+            recipes.forEach(recipe => {
+                select.insertAdjacentHTML("beforeend", `
+                    <option data-period="${select.options[select.selectedIndex]?.getAttribute("data-period")}" value="${recipe.recipeID}">${recipe.name}</option>
+                `);
+            });
+        });
+
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+    }
+});
+
+
 export var receitas = [];
 
 
