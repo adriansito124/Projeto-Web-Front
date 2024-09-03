@@ -1,44 +1,64 @@
-import { receitas } from "./dieta.js";
-
 const baseurl = "http://localhost:3000"
 
-export async function postDiet() {
-
-    
-    const pacientID = new URLSearchParams(window.location.search).get("pacientID");
-
-    const calories = document.getElementById("calories").value
-    const water = document.getElementById("water").value
-    const protein = document.getElementById("protein").value
-    const carbs = document.getElementById("carbs").value
-    const fat = document.getElementById("fat").value
+export async function renderDiet() {
 
     const response = await fetch(
-        `${baseurl}/nutri/${JSON.parse(localStorage.getItem("userInfo")).Nutricionist.nutricionistID}/criar-dieta/${pacientID}`,
+        `${baseurl}/pacient/${new URLSearchParams(window.location.search).get("pacientID")}/dieta`,
         {
-            method: "POST",
+            method: "GET",
+            headers: {
+                "Authorization": localStorage.getItem("token"),
+                "Content-Type": "application/json"
+            }
+        }
+    )   
+    
+    return await response.json();
+
+};
+
+export async function updateNutri() {
+
+    const name = document.getElementById("name").value
+    const CRN = document.getElementById("CRN").value
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+
+    console.log(password)
+
+    const id = new URLSearchParams(window.location.search).get("nutriID");
+
+    const body = {
+        name,
+        CRN, 
+        email
+    } 
+    
+    if (password.length > 0) {
+        body.password = password
+    }
+
+    const response = await fetch(
+        `${baseurl}/admin/editar/${id}`,
+        {
+            method: "PATCH",
             headers: {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
             },
-            
-            body: JSON.stringify({
-                calories: calories, 
-                water: water, 
-                protein: protein, 
-                carbs: carbs, 
-                fat: fat, 
-                recipes: receitas
-            })
+
+            body: JSON.stringify(body)
         }
     )    
 
-    const data = await response.json()
-
     if (response.ok) {
-        window.location.href = "../meus-pacientes"
+        window.location.href = "../visualizar-nutricionista/"
+        
+    } else {
+        // toastify
     }
-
 }
 
-window.postDiet = postDiet
+window.addEventListener("DOMContentLoaded", renderDiet());
+
+window.renderDiet = renderDiet;
