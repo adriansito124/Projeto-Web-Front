@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- GOOGLE FONTS AND MATERIAL ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- ESTILIZAÇÃO GERAL-->
+    <link rel="stylesheet" href="../../../styles/header.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link rel="stylesheet" href="../../../styles/reset.css">
+
+    <!-- ESTILIZAÇÃO PRÓRPIA -->
+
+    <link rel="stylesheet" href="./styles/dieta.css">
+
+    <!-- SCRIPTS -->
+
+    <script src="./scripts/dieta.js" type="module" defer></script>
+    <script src="./scripts/requests.js" type="module" defer></script>
+
+
+    <title>Criar Dieta</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="action-buttons-1">
+                <ul>
+                    <li><a href="../meus-pacientes/"><img class="nav-icon" src="../../../img/icons/id-card-clip-alt.png" alt="meus-pacientes"></a></li>
+                    <li><a href="../../receitas/minhas-receitas"><img class="nav-icon" src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
+                </ul>
+            </div>  
+            <div id="action-buttons-2">
+                <ul>
+                    <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png" alt="sair"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="bread-crumbs">
+            <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
+            <h5>Criar Dieta</h5>
+        </div>
+        <div class="main">
+            <div class="visual">
+                <button class="visualizar">EDITAR</button>
+            </div>
+            <div class="meio">
+                <div class="visual2">
+                    <div class="reto">
+                        <img src="../../../img/Penguins.jpg" class="foto" alt="...">
+                        <h2 id="paciente">Joaquim Silva</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="gigainfo">
+                <div class="info">
+                    <div class="metas">
+                        <h4 class="borda">METAS</h4>
+                        <div class="caloria">
+                            <h6>Calorias diárias</h6>
+                            <input id="calories" type="number" class="max redod reto" placeholder="1000">
+                        </div>
+                        <div class="caloria">
+                            <h6>Ingestão de água</h6>
+                            <input id="water" type="number" class="max redod reto" placeholder="1000">
+                        </div>
+                    </div>
+                    <div class="metas">
+                        <h4 class="borda">MACROS</h3>
+                            <div class="divide">
+                                <div class="metade">
+                                    <div class="caloria">
+                                        <h6>Proteínas</h6>
+                                        <input id="protein" type="number" class="max redod reto" placeholder="1000">
+                                    </div>
+                                    <div class="caloria">
+                                        <h6>Carboidrato</h6>
+                                        <input id="carbs" type="number" class="max redod reto" placeholder="1000">
+                                    </div>
+                                </div>
+                                <div class="metade">
+                                    <div class="caloria">
+                                        <h6>Gordura</h6>
+                                        <input id="fat" type="number" class="max redod reto" placeholder="1000">
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="centrol">
+                <h4 class="borda2">RECEITAS</h4>
+            </div>
+            <div class="info2" style="margin-top: 20px;">
+                <div class="metas2">
+                    <div class="gapz">
+                        <h6>Café da manhã</h6>
+                        <select onchange="adicionarReceitaManha(event)" id="manha" class="receitas-nutri maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                        </select>
+                        <div id="recipe_manha" class="gapz">
+                        </div>
+                    </div>
+                    <div class="gapz">
+                        <h6>Café da tarde</h6>
+                        <select onchange="adicionarReceitaTarde(event)" id="tarde" class="receitas-nutri maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                        </select>
+                        <div id="recipe_tarde" class="gapz">
+                        </div>
+                    </div>
+                </div>
+                <div class="metas2">
+                    <div class="gapz">
+                        <h6>Almoço</h6>
+                        <select onchange="adicionarReceitaAlmoco(event)" id="almoco" class="receitas-nutri maximo redod reto"
+                            placeholder="Selecione">
+                            <option period="aumoço" hidden>Selecione</option>
+                        </select>
+                        <div id="recipe_almoco" class="gapz">
+                        </div>
+                    </div>
+                    <div class="gapz">
+                        <h6>Janta</h6>
+                        <select onchange="adicionarReceitaNoite(event)" id="noite" class="receitas-nutri maximo redod reto"
+                            placeholder="Selecione">
+                            <option hidden>Selecione</option>
+                        </select>
+                        <div id="recipe_noite" class="gapz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="criar-novo" style="display: flex; justify-content:center">
+                <button onclick="postDiet()" class="visualizar organ"><h5 class="button-h5" style="text-align: start;"> + </h5><h5 class="button-h5" > NOVO </h5></button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
