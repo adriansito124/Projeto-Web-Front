@@ -3,14 +3,12 @@ import { getNutri} from "./requests.js";
 
 async function renderizarNutri() {
     
-    console.log("oioi");
 
     let cards = document.getElementById("cards");
 
     const nutris = await getNutri();
     console.log(nutris);
     
-
     if (nutris.length == 0) {
         cards.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary" role="alert">Sem nutricionistas cadastrados.</p>`)
     } else {
