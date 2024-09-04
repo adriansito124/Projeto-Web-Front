@@ -118,7 +118,7 @@ h6{
 .gigainfo{
     margin-top: 30px;
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: column;
 }
 
@@ -140,7 +140,7 @@ h6{
 .metas{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 40%;
     gap: 20px;
 }
 
@@ -171,7 +171,7 @@ h6{
     text-align: center;
     border-radius: 8px;
     color: #07A37E;
-    width: 75%;
+    width: 80%;
 }
 
 .centrol{
@@ -205,4 +205,32 @@ h6{
 .alinhaa{
     width: 100%;
     text-align: start;
+}
+
+.visualizar2 {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.visualizar2 > h5 {
+    color: white;
+}
+
+.visualizar2:hover{
+    scale: 1.05;
+    background-color: #119173;
+}
+
+.h5{
+    color: white;
 }
