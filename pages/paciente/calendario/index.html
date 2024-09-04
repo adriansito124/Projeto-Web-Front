@@ -33,17 +33,24 @@
 
     <link rel="stylesheet" href="./styles.css/calendar.css">
     <script src="path/to/dayjs/dayjs.min.js"></script>
-    <script>
+
+    <!-- <script>
         dayjs().format()
-    </script>
+    </script> -->
 
     <!-- SCRIPTS -->
-    <script type="module" src="./calendar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/isoWeek.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/localeData.js"></script>
+    
+    <script type="module" src="./scripts/calendar.js" defer></script>
+    <script type="module" src="./scripts/requests.js" defer></script>
+    
 
-
-    <title>Calendario</title>
     <link rel="stylesheet" href="../../../img/icons/logo colorida.png">
     <link rel="icon" href="../../../img/icons/logo colorida.png">
+    
+    <title>Calendario</title>
 
     <!-- DATE ESTILIZAD? -->
 
@@ -79,7 +86,7 @@
         </div>
 
         <div class="main">
-            <input onchange="" class="date" type="date">
+            <input id="date-input" onchange="getPlannedRecipes()" class="date" type="date">
             <div id="diet-recipes" class="container">
                 <div class="accordion" id="accordionExample">
                     

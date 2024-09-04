@@ -1,4 +1,8 @@
-function renderCalendar() {
+export async function renderCalendar() {
+
+    const plannedRecipes = await getPlannedRecipes()
+    console.log(plannedRecipes);
+
     const accordionContainer = document.getElementById("accordionExample");
     
     // Clear the container first (optional, if you want to re-render)
@@ -6,13 +10,13 @@ function renderCalendar() {
 
     // Days of the week
     const daysOfWeek = [
-        'Domingo',
         'Segunda-feira',
         'Terça-feira',
         'Quarta-feira',
         'Quinta-feira',
         'Sexta-feira',
-        'Sábado'
+        'Sábado',
+        'Domingo'
     ];
 
     // Loop through each day and add accordion items
