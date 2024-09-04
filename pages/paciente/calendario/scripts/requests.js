@@ -45,7 +45,7 @@ export async function getPlannedRecipes() {
     console.log(date.year());
 
     const response = await fetch(
-        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/ver-planejamento/2/${date.year()}`,
+        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/ver-planejamento/1/${date.year()}`,
         {
             method: "GET",
             headers: {
