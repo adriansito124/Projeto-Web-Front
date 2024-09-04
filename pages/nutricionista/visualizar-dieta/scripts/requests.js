@@ -21,14 +21,14 @@ export async function renderDiet() {
 
 export async function updateDiet() {
 
+    const diet = await renderDiet();
+
     const calories = document.getElementById("calories").value
     const water = document.getElementById("water").value
     const protein = document.getElementById("protein").value
     const carbs = document.getElementById("carbs").value
     const fat = document.getElementById("fat").value
     const newRecipes = receitas;
-
-    const id = new URLSearchParams(window.location.search).get("nutriID");
 
     const body = {
         calories: calories, 
@@ -37,10 +37,18 @@ export async function updateDiet() {
         carbs: carbs, 
         fat: fat, 
         recipes: newRecipes
-    } 
+    }
+    
+    console.log(body);
+    
+
+    // console.log(localStorage.getItem("userInfo").Pacient.dietID);
+    
+    console.log(diet.dietID);
+    
 
     const response = await fetch(
-        `${baseurl}/nutri/update/`,
+        `${baseurl}/nutri/updateDiet/${diet.dietID}`,
         {
             method: "PATCH",
             headers: {
@@ -52,12 +60,12 @@ export async function updateDiet() {
         }
     )    
 
-    if (response.ok) {
-        window.location.href = "../meus-pacientes/"
+    // if (response.ok) {
+    //     window.location.href = "../meus-pacientes/"
         
-    } else {
-        // toastify
-    }
+    // } else {
+    //     // toastify
+    // }
 }
 
 window.addEventListener("DOMContentLoaded", renderDiet());

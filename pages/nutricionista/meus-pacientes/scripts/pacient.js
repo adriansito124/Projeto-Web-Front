@@ -26,7 +26,7 @@ async function renderizarPacientes() {
                             <div id="action-buttons">
                                 <form id="dataForm" action="../visualizar-dieta/" method="GET">
                                     <button type="submit" class="btn visualizar">VISUALIZAR</button>
-                                    <input type="hidden" name="pacientID" value="${paciente.userID}">
+                                    <input type="hidden" name="pacientID" value="${paciente.Pacient.pacientID}">
                                 </form>
                                 <button onclick="deletePacient(${paciente.userID})" class="btn btn-danger">DELETAR</button>
                             </div>

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 });
 
-// Ensure `renderDiet` is awaited and `diet` is defined
+
 const diet = await renderDiet();
 
 console.log(diet);

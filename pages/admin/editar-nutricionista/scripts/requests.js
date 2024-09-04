@@ -21,7 +21,7 @@ export async function renderNutri() {
         renderizarNutriPorID(await response.json());
         
     } else {
-        //
+        //  
     }
 };
 
