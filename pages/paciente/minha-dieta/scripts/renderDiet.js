@@ -14,6 +14,7 @@ async function renderDiet() {
     const secondAccordion = document.getElementById("2-accordion")
     const thirdAccordion = document.getElementById("3-accordion")
     const fourthAccordion = document.getElementById("4-accordion")
+
     
     var accordionBody;
 
