@@ -4,23 +4,20 @@ dayjs.extend(dayjs_plugin_advancedFormat);
 
 export async function renderCalendar() {
 
+    document.getElementById("selecione-alert").setAttribute("class", "d-none")
+
     const plannedRecipes = await getPlannedRecipes()
     console.log(plannedRecipes);
 
-    const startOfWeek = dayjs().year(2024).isoWeek(plannedRecipes.week).startOf('isoWeek');
+    const startOfWeek = dayjs(document.getElementById("date-input").value).year(2024).isoWeek(plannedRecipes.week).startOf('isoWeek');
     const weekNumber = startOfWeek.isoWeek(); 
-    console.log(weekNumber);
 
     const endOfWeek = startOfWeek.endOf('isoWeek');
     
-    // Generate array of days in the week
     const days = [];
     for (let date = startOfWeek; date.isBefore(endOfWeek); date = date.add(1, 'day')) {
       days.push(date.format('DD/MM/YYYY'));
     }
-
-    console.log(days);
-
 
     const accordionContainer = document.getElementById("accordionExample");
 
@@ -74,3 +71,5 @@ export async function renderCalendar() {
 }
 
 window.renderCalendar = renderCalendar
+
+document.getElementById("date-input").addEventListener("onchange", renderCalendar())
