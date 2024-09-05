@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-3">
                     <ul>
-                                        <li><a href="../../paciente/calendario"><img class="nav-icon" src="../../../img/icons/img/icons/calendar-check.png" alt="calendario"></a></li>
+                        <li><a href="../../paciente/calendario"><img class="nav-icon" src="../../../img/icons/calendar-check.png" alt="calendario"></a></li>
                     </ul>
                 </div>
                 <div id="action-buttons-4">
