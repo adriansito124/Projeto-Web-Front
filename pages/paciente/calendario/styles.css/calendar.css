@@ -82,3 +82,23 @@
 .button-title {
     margin: 0px 20px 0px 0px;
 }
+
+.card-body {
+    min-height: 160px;
+}
+
+.card-title {
+    font-weight: 700;
+    min-height: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.modal-title {
+    font-weight: 700;
+}

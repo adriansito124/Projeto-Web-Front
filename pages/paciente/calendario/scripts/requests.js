@@ -11,19 +11,7 @@ export async function getPlannedRecipes() {
 
     const startOfWeek = dayjs(date).startOf('isoWeek');
 
-    const weekNumber = startOfWeek.isoWeek(); // Get the week number
-    console.log(weekNumber);
-    const endOfWeek = startOfWeek.endOf('isoWeek');
-    
-    const days = [];
-    for (let date = startOfWeek; date.isBefore(endOfWeek); date = date.add(1, 'day')) {
-      days.push(date.format('YYYY-MM-DD'));
-    }
-
-    console.log(days);
-    
-
-    console.log(date.year());
+    const weekNumber = startOfWeek.isoWeek(); 
 
     const response = await fetch(
         `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/ver-planejamento/${weekNumber}/${date.year()}`,
@@ -40,5 +28,41 @@ export async function getPlannedRecipes() {
 
 }
 
+export function insertPlanningModal() {
+    document.getElementById("modal-from").setAttribute("data-value", target.parentelement.id)
+
+}
+
+export async function insertPlanning() {
+
+    let manha = document.getElementById("manha").value
+    let almoco = document.getElementById("almoco").value
+    let tarde = document.getElementById("tarde").value
+    let janta = document.getElementById("janta").value
+
+    console.log(manha);
+    console.log(almoco);
+    console.log(tarde);
+    console.log(janta);
+
+    let date = dayjs(document.getElementById("date-input").value, 'DD/MM/YYYY')
+
+    const startOfWeek = dayjs(date).startOf('isoWeek');
+
+    // const response = await fetch(
+    //     `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/planejamento`,
+    //     {
+    //         method: "GET",
+    //         headers: {
+    //             "Authorization": localStorage.getItem("token"),
+    //             "Content-Type": "application/json"
+    //         }
+    //     }
+    // )    
+    // return await response.json()
+    
+}
+
 
 window.getPlannedRecipes = getPlannedRecipes;
+window.insertPlanningModal = insertPlanningModal;
