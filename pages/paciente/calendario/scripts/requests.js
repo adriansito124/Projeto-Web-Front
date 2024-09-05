@@ -9,6 +9,7 @@ const baseurl = "http://localhost:3000"
 
 dayjs.extend(dayjs_plugin_isoWeek);
 dayjs.extend(dayjs_plugin_localeData);
+dayjs.extend(dayjs_plugin_advancedFormat);
 
 export async function getPlannedRecipes() {
 
@@ -42,10 +43,24 @@ export async function getPlannedRecipes() {
     //     const date = startOfWeek.add(i, 'day');
     //     weekDates.push(date.format('DD/MM/YYYY')); // Format the date as needed
     // }
+
+    // const startOfWeek = dayjs().year(year).isoWeek(weekNumber).startOf('isoWeek');
+    // Calculate the end of the week (start of the next week)
+    const endOfWeek = startOfWeek.endOf('isoWeek');
+    
+    // Generate array of days in the week
+    const days = [];
+    for (let date = startOfWeek; date.isBefore(endOfWeek); date = date.add(1, 'day')) {
+      days.push(date.format('YYYY-MM-DD'));
+    }
+
+    console.log(days);
+    
+
     console.log(date.year());
 
     const response = await fetch(
-        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/ver-planejamento/1/${date.year()}`,
+        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/ver-planejamento/27/${date.year()}`,
         {
             method: "GET",
             headers: {

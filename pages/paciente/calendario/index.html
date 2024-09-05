@@ -42,6 +42,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/isoWeek.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/localeData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@^1.11.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@^1.11.7/plugin/advancedFormat.js"></script>
     
     <script type="module" src="./scripts/calendar.js" defer></script>
     <script type="module" src="./scripts/requests.js" defer></script>
@@ -58,6 +60,45 @@
 </head>
 
 <body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Planeje seu dia!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Café da Manhã</label>
+                        <select class="form-control recipe-select" id="manha">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Almoço</label>
+                        <select class="form-control recipe-select" id="almoco">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Café da Tarde</label>
+                        <select class="form-control recipe-select" id="tarde">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Café da Manhã</label>
+                        <select class="form-control recipe-select" id="janta">
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ENVIAR</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                  </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <header>
         <nav>
             <div id="action-buttons-1">
@@ -86,7 +127,7 @@
         </div>
 
         <div class="main">
-            <input id="date-input" onchange="getPlannedRecipes()" class="date" type="date">
+            <input id="date-input" onchange="renderCalendar()" class="date" type="date">
             <div id="diet-recipes" class="container">
                 <div class="accordion" id="accordionExample">
                     
