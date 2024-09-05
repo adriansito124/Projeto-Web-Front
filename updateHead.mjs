@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const targetLine = '<link rel="icon" href="../../../img/icons/logo colorida.png">';
+const targetLine = '<link rel="icon" href="../../../img/icons/elprimito.png">';
 const pagesFolder = path.resolve('pages'); // Adjust the path if necessary
 
 async function updateHead(filePath) {
