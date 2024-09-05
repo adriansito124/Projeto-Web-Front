@@ -31,7 +31,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     max-width: 240px;
     width: 100%;
 }
@@ -50,6 +49,7 @@
 }
 
 .organ{
+    padding-top: 15px;
     font-size: 1.3rem;
 }
 

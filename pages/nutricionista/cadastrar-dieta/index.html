@@ -33,31 +33,42 @@
 
 
     <title>Criar Dieta</title>
-<link rel="stylesheet" href="../../../img/icons/logo colorida.png">
-<link rel="icon" href="../../../img/icons/logo colorida.png">
+    <link rel="stylesheet" href="../../../img/icons/logo colorida.png">
+    <link rel="icon" href="../../../img/icons/logo colorida.png">
 </head>
 
 <body>
     <header>
-        <nav>
-            <div id="action-buttons-1">
-                <ul>
-                    <li><a href="../meus-pacientes/"><img class="nav-icon" src="../../../img/icons/id-card-clip-alt.png" alt="meus-pacientes"></a></li>
-                    <li><a href="../../receitas/minhas-receitas"><img class="nav-icon" src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
-                </ul>
-            </div>  
-            <div id="action-buttons-2">
-                <ul>
-                    <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png" alt="sair"></a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="separa">
+
+            <h3 class="grande">Criar Dieta</h3>
+
+            <nav>
+                <div id="action-buttons-1">
+                    <ul>
+                        <li><a href="../meus-pacientes/index.html"><img class="nav-icon"
+                                    src="../../../img/icons/id-card-clip-alt.png" alt="visualizar-nutricionista"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="action-buttons-2">
+                    <ul>
+                        <li><a href="../../receitas/minhas-receitas"><img class="nav-icon"
+                                    src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
+                    </ul>
+                </div>
+                <div id="action-buttons-3">
+                    <ul>
+                        <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png"
+                                    alt="sair"></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
     </header>
     <main>
-        <div id="bread-crumbs">
-            <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
-            <h5>Criar Dieta</h5>
-        </div>
         <div class="main">
             <div class="meio">
                 <!-- <div class="visual2">
@@ -112,8 +123,8 @@
                 <div class="metas2">
                     <div class="gapz">
                         <h6>Café da manhã</h6>
-                        <select onchange="adicionarReceitaManha(event)" id="manha" class="receitas-nutri maximo redod reto"
-                            placeholder="Selecione">
+                        <select onchange="adicionarReceitaManha(event)" id="manha"
+                            class="receitas-nutri maximo redod reto" placeholder="Selecione">
                             <option hidden>Selecione</option>
                         </select>
                         <div id="recipe_manha" class="gapz">
@@ -121,8 +132,8 @@
                     </div>
                     <div class="gapz">
                         <h6>Café da tarde</h6>
-                        <select onchange="adicionarReceitaTarde(event)" id="tarde" class="receitas-nutri maximo redod reto"
-                            placeholder="Selecione">
+                        <select onchange="adicionarReceitaTarde(event)" id="tarde"
+                            class="receitas-nutri maximo redod reto" placeholder="Selecione">
                             <option hidden>Selecione</option>
                         </select>
                         <div id="recipe_tarde" class="gapz">
@@ -132,8 +143,8 @@
                 <div class="metas2">
                     <div class="gapz">
                         <h6>Almoço</h6>
-                        <select onchange="adicionarReceitaAlmoco(event)" id="almoco" class="receitas-nutri maximo redod reto"
-                            placeholder="Selecione">
+                        <select onchange="adicionarReceitaAlmoco(event)" id="almoco"
+                            class="receitas-nutri maximo redod reto" placeholder="Selecione">
                             <option period="aumoço" hidden>Selecione</option>
                         </select>
                         <div id="recipe_almoco" class="gapz">
@@ -141,17 +152,20 @@
                     </div>
                     <div class="gapz">
                         <h6>Janta</h6>
-                        <select onchange="adicionarReceitaNoite(event)" id="noite" class="receitas-nutri maximo redod reto"
-                            placeholder="Selecione">
+                        <select onchange="adicionarReceitaNoite(event)" id="noite"
+                            class="receitas-nutri maximo redod reto" placeholder="Selecione">
                             <option hidden>Selecione</option>
                         </select>
                         <div id="recipe_noite" class="gapz">
+                            
                         </div>
                     </div>
                 </div>
             </div>
             <div style="display: flex; justify-content:center">
-                <button onclick="postDiet()"  class="visualizar2 organ" style="text-align: start;"><h5>CRIAR DIETA</h5></button>
+                <button onclick="postDiet()" class="visualizar2 organ" style="text-align: start;">
+                    <h5>CRIAR DIETA</h5>
+                </button>
             </div>
         </div>
     </main>

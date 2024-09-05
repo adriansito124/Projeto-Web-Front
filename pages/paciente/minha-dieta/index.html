@@ -45,83 +45,92 @@
 
 <body>
   <header>
-    <nav>
-      <div id="action-buttons-1">
-        <ul>
-          <li><a href="#"><img class="nav-icon" src="../../../img/icons/medical-records.png" alt="dieta"></a></li>
-          <li><a href="../../receitas/minhas-receitas"><img class="nav-icon"
-                src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
-          <li><a href="../../paciente/calendario"><img class="nav-icon" src="../../../img/icons/" alt="calendario"></a>
-          </li>
-        </ul>
-      </div>
-      <div id="action-buttons-2">
-        <ul>
-          <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png" alt="sair"></a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <div id="bread-crumbs">
-      <h5>Minha Dieta</h5>
-      <!-- <span class="material-symbols-outlined arrow">arrow_back_ios</span> -->
+    <div class="separa">
+
+      <h3 class="grande">Minha Dieta</h3>
+
+      <nav>
+        <div id="action-buttons-1">
+          <ul>
+            <li><a href="../../paciente/minha-dieta/"><img class="nav-icon"
+                  src="../../../img/icons/id-card-clip-alt.png" alt="visualizar-nutricionista"></a>
+            </li>
+          </ul>
+        </div>
+        <div id="action-buttons-2">
+          <ul>
+            <li><a href="../../receitas/minhas-receitas"><img class="nav-icon"
+                  src="../../../img/icons/recipe-book (1).png" alt="minhas-receitas"></a></li>
+          </ul>
+        </div>
+        <div id="action-buttons-3">
+          <ul>
+            <li><a href="../../paciente/calendario"><img class="nav-icon"
+                  src="../../../img/icons/calendar-check.png" alt="calendario"></a></li>
+          </ul>
+        </div>
+        <div id="action-buttons-4">
+          <ul>
+            <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png" alt="sair"></a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
+  </header>
+  <main class="main">
     <div id="greetings" class="container">
     </div>
-    <div class="main">
-      <div id="diet-recipes" class="container">
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                Café da Manhã 🍳
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div id="1-accordion" class="accordion-body">
-              </div>
+    <div id="diet-recipes" class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Café da Manhã 🍳
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div id="1-accordion" class="accordion-body">
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Almoço 🥗
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div id="2-accordion" class="accordion-body">
-              </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Almoço 🥗
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div id="2-accordion" class="accordion-body">
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Café da Tarde 🥪
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div id="3-accordion" class="accordion-body">
-              </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Café da Tarde 🥪
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div id="3-accordion" class="accordion-body">
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Janta 🍝
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-              data-bs-parent="#accordionExample">
-              <div id="4-accordion" class="accordion-body">
-              </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Janta 🍝
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div id="4-accordion" class="accordion-body">
             </div>
           </div>
         </div>

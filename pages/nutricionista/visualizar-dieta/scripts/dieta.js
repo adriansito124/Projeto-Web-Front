@@ -62,9 +62,12 @@ function renderDietRecipes() {
 
         if (div) {
             div.insertAdjacentHTML("beforeend",
-                `<div class="maximo redod reto margem">
+                `<div class="maximo paz">
+                <div class="maximo2 redod reto">
                     <h6 class="alinhaa">${receita.name}</h6>
-                </div>`
+                </div>
+                <button id="" class="excloi">X</button>
+            </div>`
             );
         } else {
             console.error(`Div not found for period: ${receita.period}`);
@@ -95,8 +98,11 @@ function adicionarReceita(periodo, selectId, recipeContainerId) {
         receitas.forEach((receita) => {
             if (receita.period === periodo) {
                 colunas.insertAdjacentHTML("beforeend",
-                    `<div class="maximo redod reto">
-                        <h6 class="alinhaa">${receita.name}</h6>
+                    `<div class="maximo paz">
+                        <div class="maximo2 redod reto">
+                            <h6 class="alinhaa">${receita.name}</h6>
+                        </div>
+                        <button id="" class="excloi">X</button>
                     </div>`
                 );
             }
