@@ -1,6 +1,6 @@
 main {
-    background-color: #FFFF;
-    /* height: 100vh; */
+    background-color: var(--claro);
+    height: 90vh;
     width: 100vw;
     display: flex;
     justify-content: start;
