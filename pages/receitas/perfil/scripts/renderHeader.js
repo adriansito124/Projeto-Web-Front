@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-3">
                     <ul>
-                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
+                        <li><a href="../perfil/"><img class="nav-icon"
                                     src="../../../img/icons/perfil.png" alt="perfil"></a></li>
                     </ul>
                 </div>
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-4">
                     <ul>
-                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
+                        <li><a href="../perfil/"><img class="nav-icon"
                                     src="../../../img/icons/perfil.png" alt="perfil"></a></li>
                     </ul>
                 </div>
@@ -97,6 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-window.getRecipes = getRecipes
+window.getProfile = getProfile
 
 
