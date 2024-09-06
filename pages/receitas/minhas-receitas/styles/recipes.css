@@ -26,7 +26,17 @@ main {
 }
 
 .visualizar {
-    background-color: #07A37E;
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.visualizar:hover {
+    background-color: #078669;
     border: 1px solid #07A37E;
     color: white;
     padding: 7px;
@@ -35,12 +45,73 @@ main {
     justify-content: center;
 }
 
-.visualizar:hover{
-    scale: 1.05;
-    background-color: #119173;
+.btn {
+    width: 100px;
+}
+
+h5 {
+    margin: 0;
+}
+
+.visualizar {
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+}
+
+#cards {
+    margin-top: 10%;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-img-top {
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+.visualizar2 {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 100%;
+    height: 40px;
+}
+
+.visualizar2 > h5 {
     color: white;
 }
 
-.button-h5 {
+.visualizar2:hover{
+    scale: 1.05;
+    background-color: #119173;
+}
+
+.h5{
     color: white;
+}
+
+.organ {
+    display: flex;
+    align-items: center;
+}
+
+#action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

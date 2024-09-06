@@ -15,34 +15,41 @@ export async function postReceita(event) {
 
     const name = document.getElementById("nome_receita").value
 
-    const response = await fetch(
+    if (name == "" ) {
+        alert("Por favor, insira ao menos o nome da receita para continuar.")
+        
+    } else {
 
-        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/criar-receita`,
-        {
-            method: "POST",
-            headers: {
-                "Authorization": localStorage.getItem("token"),
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                name: name,
-                ingredients: ingredientes,
-                steps: passos
-            })
-        }
-    )
-
-
-    if (response.ok) {
-        if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
-
-            window.location.href = "../minhas-receitas"
-        } else {
-            window.location.href = "../minhas-receitas"
-
+        const response = await fetch(
+    
+            `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/criar-receita`,
+            {
+                method: "POST",
+                headers: {
+                    "Authorization": localStorage.getItem("token"),
+                    "Content-Type": "application/json"
+                },
+    
+                body: JSON.stringify({
+                    name: name,
+                    ingredients: ingredientes,
+                    steps: passos
+                })
+            }
+        )
+    
+        
+        if (response.ok) {
+            if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
+    
+                window.location.href = "../minhas-receitas"
+            } else {
+                window.location.href = "../minhas-receitas"
+    
+            }
         }
     }
+
 
 }
 

@@ -6,8 +6,15 @@
     border-radius: 8px;
     display: flex;
     justify-content: center;
-    max-width: 110px;
-    width: 50%;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 100%;
+    height: 40px;
+}
+
+.visualizar > h5 {
+    color: white;
 }
 
 .visualizar:hover{
@@ -137,7 +144,7 @@ h6{
     border-radius: 8px;
     display: flex;
     justify-content: center;
-    max-width: 110px;
+    max-width: 240px;
     width: 50%;
 }
 

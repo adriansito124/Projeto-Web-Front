@@ -3,9 +3,28 @@
     border: 1px solid #07A37E;
     color: white;
     padding: 7px;
+    padding-top: 15px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 240px;
+    margin-bottom: 30px;
+    height: 40px;
+    margin-bottom: 5px;
+
+}
+
+button {
+    display: flex;
+    align-items: center;
+}
+
+
+.visualizar > h5 {
+    color: white;
 }
 
 .visualizar:hover{
@@ -101,11 +120,7 @@ input::file-selector-button {
     border-radius: 100%;
     cursor: pointer;
 }
-.visualizar {
-    background-color: #FFFF;
-    border: 1px solid #07A37E;
-    color: #07A37E;
-}
+
 
 #cards {
     margin-top: 10%;

@@ -8,32 +8,39 @@ export async function postNutri() {
     const password = document.getElementById("password").value
     const userType = 1;
 
-    // fazendo a requisição completa, endpoint com headers e body
-    const response = await fetch(
-        `${baseurl}/admin/cadastrar`,
-        {
-            method: "POST",
-            headers: {
-                "Authorization": localStorage.getItem("token"),
-                "Content-Type": "application/json"
-            },
-            
-            body: JSON.stringify({
-                name: name, 
-                CRN: CRN,
-                email: email, 
-                password: password, 
-                userType: 1
-            })
+    if (name == "" || CRN == "" || email == "" || password == "") {
+        alert("Por favor, insira corretamente os campos solicitados.")
+        
+    } else {
+
+        // fazendo a requisição completa, endpoint com headers e body
+        const response = await fetch(
+            `${baseurl}/admin/cadastrar`,
+            {
+                method: "POST",
+                headers: {
+                    "Authorization": localStorage.getItem("token"),
+                    "Content-Type": "application/json"
+                },
+                
+                body: JSON.stringify({
+                    name: name, 
+                    CRN: CRN,
+                    email: email, 
+                    password: password, 
+                    userType: 1
+                })
+            }
+        )    
+    
+        console.log(response.status);
+        console.log(response.headers);
+    
+        if (response.ok) {
+            window.location.href = "../visualizar-nutricionista/"
         }
-    )    
-
-    console.log(response.status);
-    console.log(response.headers);
-
-    if (response.ok) {
-        window.location.href = "../visualizar-nutricionista/"
     }
+
 }
 
 window.postNutri = postNutri;
