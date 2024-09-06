@@ -50,8 +50,11 @@ function adicionarReceitaManha(event) {
 
         if (receita.period == "manha") {
             colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo redod reto margem">
-                <h6 class="alinhaa">${receita.name}</h6>
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button id="" class="excloi">X</button>
             </div>`
         )
         }
@@ -90,8 +93,11 @@ function adicionarReceitaTarde(event) {
         
         if (receita.period == "tarde") {
            colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.name}</h6>
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button id="" class="excloi">X</button>
             </div>`
         ) 
         }
@@ -130,8 +136,11 @@ function adicionarReceitaAlmoco(event) {
 
         if (receita.period == "almoco") {
            colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.name}</h6>
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button id="" class="excloi">X</button>
             </div>`
         ) 
         }
@@ -169,8 +178,11 @@ function adicionarReceitaNoite(event) {
 
         if (receita.period == "noite") {
             colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo redod reto">
-                <h6 class="alinhaa">${receita.name}</h6>
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button id="" class="excloi">X</button>
             </div>`
             )
         }
