@@ -81,16 +81,43 @@ export async function renderCalendar() {
             let divValue = "recipes-div-" + weekDay;
             let btn = "planejar-btn-" + weekDay;
 
+            
             document.getElementById(btn).setAttribute("class", "d-none")
             
             day.periods.forEach((period) => {
+                
+                let emoji;
+
+                switch (period.period) {
+                    case "manha":
+
+                        period.period = "Café da Manhã"
+                        emoji = "🍳"
+                        break;
+
+                    case "almoco":
+                        period.period = "Almoço"
+                        emoji = "🥗"
+                        break;
+
+                    case "tarde":
+                        period.period = "Café da Tarde"
+                        emoji = "🥪"
+                        break;
+
+                    case "noite":
+                        period.period = "Janta"
+                        emoji = "🍝"
+                        break;
+                }
+
                 document.getElementById(divValue).insertAdjacentHTML(
                     "beforeend",
                     `
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 cardzinho-body">
                         <div class="card">
                             <div class="card-body">
-                            <h5 class="font-weight-bold card-title">${period.recipes[0].name}</h5>
+                            <h5 class="font-weight-bold card-title">${emoji}  ${period.recipes[0].name}</h5>
                             <p class="card-text">${period.period}</p>
                             <form id="dataForm" action="../../receitas/preparar-receita/" method="GET">
                                 <button type="submit" class="btn visualizar">PREPARAR</button>

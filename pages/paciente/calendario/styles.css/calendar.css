@@ -88,6 +88,10 @@
     min-height: 160px;
 }
 
+.cardzinho-body {
+    margin-top: 20px;
+}
+
 .card-title {
     font-weight: 700;
     min-height: 50px;
@@ -102,4 +106,8 @@ form {
 
 .modal-title {
     font-weight: 700;
+}
+
+#dataForm {
+    padding: 0;
 }

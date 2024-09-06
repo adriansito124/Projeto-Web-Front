@@ -1,3 +1,5 @@
+import { renderCalendar } from "./calendar.js";
+
 const baseurl = "http://localhost:3000"
 
 dayjs.extend(dayjs_plugin_isoWeek);
@@ -43,16 +45,6 @@ export async function insertPlanning() {
     let noite = document.getElementById("noite").value
     let date = document.getElementById("modal-form").getAttribute("data-value")
 
-    console.log(manha);
-    console.log(almoco);
-    console.log(tarde);
-    console.log(noite);
-    // console.log(date);
-
-    // const startOfWeek = dayjs(document.getElementById("date-input").value)
-    // .year(2024)
-    // .isoWeek()
-    
     function parseDate(dateStr) {
         const [day, month, year] = dateStr.split('/').map(Number);
         return dayjs(new Date(year, month - 1, day)); // JavaScript months are zero-based
@@ -60,9 +52,9 @@ export async function insertPlanning() {
     
       // Create a Day.js object for the date
     const dateStr = date; // Date in DD/MM/YYYY format
-    const data = parseDate(dateStr);
+    const parsedDate = parseDate(dateStr);
 
-    const isoWeekNumber = data.isoWeek();
+    const isoWeekNumber = parsedDate.isoWeek();
 
     console.log('ISO week number:', isoWeekNumber);
 
@@ -106,11 +98,26 @@ export async function insertPlanning() {
         }
     )    
     
-    console.log(response.json());
+    const data = await response.json();
+    console.log(data);
+    
 
-    if (response.ok) {
-        window.location.reload()
-        document.getElementById("modal-form").value = date 
+    if (response.status == 200) {
+        var modal = document.getElementById('exampleModal');
+
+        // Manually hide the modal
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Remove the modal-open class if present
+      
+        // Remove the backdrop (if present)
+        var backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+
+        renderCalendar()
+        
 
     }
     
