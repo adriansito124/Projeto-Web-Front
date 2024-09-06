@@ -26,7 +26,17 @@ main {
 }
 
 .visualizar {
-    background-color: #07A37E;
+    background-color: #FFFF;
+    border: 1px solid #07A37E;
+    color: #07A37E;
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.visualizar:hover {
+    background-color: #078669;
     border: 1px solid #07A37E;
     color: white;
     padding: 7px;
@@ -35,14 +45,8 @@ main {
     justify-content: center;
 }
 
-.visualizar:hover{
-    scale: 1.05;
-    background-color: #119173;
-    color: white;
-}
-
-.button-h5 {
-    color: white;
+.btn {
+    width: 100px;
 }
 
 h5 {
@@ -82,8 +86,10 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     max-width: 240px;
     width: 100%;
+    height: 40px;
 }
 
 .visualizar2 > h5 {
@@ -99,9 +105,9 @@ h5 {
     color: white;
 }
 
-.organ{
-    padding-top: 15px;
-    font-size: 1.3rem;
+.organ {
+    display: flex;
+    align-items: center;
 }
 
 #action-buttons {

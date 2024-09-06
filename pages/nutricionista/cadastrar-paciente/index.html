@@ -83,7 +83,10 @@
                         <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
                     <form id="dataForm" action="../cadastrar-dieta/" method="GET">
-                        <button onclick="postPacient(event)" type="button" class="btn visualizar">CADASTRAR</button>
+                        <!-- <button onclick="postPacient(event)" type="button" class="btn visualizar">CADASTRAR</button> -->
+                        <button onclick="postPacient(event)" class="btn visualizar" style="text-align: start;">
+                            <h5>CADASTRAR</h5>
+                        </button>
                         <input type="hidden" id="pacientInfo" name="pacientID" value="">
                     </form>
                 </div>

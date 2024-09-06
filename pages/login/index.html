@@ -25,7 +25,11 @@
         rel="stylesheet">
     <!-- FONTE NUNITO -->
 
-    <script src="./scripts/requests.js" type="module" defer></script>
+    <!-- SCRIPTS -->
+    <script src="./scripts/requests.js" type="module" defer ></script>
+    <script src="./scripts/scripts.js" type="module" defer ></script>
+    <!-- SCRIPTS -->
+
 <link rel="stylesheet" href="../../../img/icons/logo colorida.png">
 <link rel="icon" href="../../../img/icons/logo colorida.png">
 </head>
@@ -43,9 +47,12 @@
                         <h6>Email</h6>
                         <input id="email" class="max redod" type="text" placeholder="Digite aqui...">
                     </div>
-                    <div class="extended">
-                        <h6>Senha</h6>
-                        <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
+                    <div class="extended d-flex align-items-end">
+                        <div id="password-div">
+                            <h6>Senha</h6>
+                            <input id="password" class="max redod" type="password" placeholder="Digite aqui...">
+                        </div>
+                        <span id="password-span">🙈</span>
                     </div>
                     <button id="login-btn" onclick="signIn()" class="butao">ENTRAR</button>
                 </div>
