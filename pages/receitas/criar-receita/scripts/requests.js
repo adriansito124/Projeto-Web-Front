@@ -33,7 +33,7 @@ export async function postReceita(event) {
         }
     )
 
-    
+
     if (response.ok) {
         if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
 
@@ -69,6 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-3">
                     <ul>
+                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
+                                    src="../../../img/icons/perfil.png" alt="perfil"></a></li>
+                    </ul>
+                </div>
+                <div id="action-buttons-4">
+                    <ul>
                         <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png"
                                     alt="sair"></a></li>
                     </ul>
@@ -103,12 +109,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-4">
                     <ul>
+                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
+                                    src="../../../img/icons/perfil.png" alt="perfil"></a></li>
+                    </ul>
+                </div>
+                <div id="action-buttons-5">
+                    <ul>
                         <li><a href="../../login/"><img class="nav-icon" src="../../../img/icons/exit.png"
                                     alt="sair"></a></li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+                        </nav>
+                    </div>
     `)
     }
 })
