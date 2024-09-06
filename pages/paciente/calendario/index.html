@@ -43,6 +43,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/isoWeek.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/localeData.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/dayjs@^1.11.7/dayjs.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/plugin/weekOfYear.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/plugin/customParseFormat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@^1.11.7/plugin/advancedFormat.js"></script>
     
     <script type="module" src="./scripts/calendar.js" defer></script>
@@ -65,9 +67,6 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Planeje seu dia!</h5>
-              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-                <!-- <span aria-hidden="true">&times;</span> -->
-              <!-- </button> -->
             </div>
             <div class="modal-body">
                 <form data-value="" id="modal-form">
@@ -91,11 +90,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Café da Manhã</label>
-                        <select class="form-control recipe-select" id="janta">
+                        <select class="form-control recipe-select" id="noite">
                             <option selected hidden>Selecione uma receita para a refeição</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">ENVIAR</button>
+                    <button type="button" onclick="insertPlanning()" class="btn btn-primary mt-3">ENVIAR</button>
                 </form>
             </div>
             </div>

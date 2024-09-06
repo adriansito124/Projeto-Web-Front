@@ -61,19 +61,52 @@ export async function renderCalendar() {
                         </button>
                     </h2>
                     <div id="${dayId}" class="${divClass}" aria-labelledby="${headId}"
-                        data-bs-parent="#accordionExample">
-                        <div id="accordion-body-${index}" class="accordion-body d-flex flex-column align-items-center">
-                            <div id="recipes-div-${index + 1}" class="row recipes-div"></div>
+                    data-bs-parent="#accordionExample">
+                    <div id="accordion-body-${index}" class="accordion-body d-flex flex-column align-items-center">
+                        <div id="recipes-div-${index + 1}" class="row recipes-div"></div>
+                        <button type="button" id="planejar-btn-${index + 1}" data-value="${days[index]}" onclick="insertPlanningModal(event)" class="btn visualizar mb-3 planejar-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            PLANEJE SEU DIA!
+                        </button>
                         </div>
                     </div>
                 </div>
             `
         );
-    // Add meals inside each day's accordion-body
     });
 
-  // document.getElementById("recipes-div").setAttribute("class", "d-none");
+    if (plannedRecipes.weekRecipes) {
 
+        plannedRecipes.weekRecipes.forEach((day) => {
+            let weekDay = dayjs(day.day).$W == 0 ? 7 : dayjs(day.day).$W;
+            let divValue = "recipes-div-" + weekDay;
+            let btn = "planejar-btn-" + weekDay;
+
+            document.getElementById(btn).setAttribute("class", "d-none")
+            
+            day.periods.forEach((period) => {
+                document.getElementById(divValue).insertAdjacentHTML(
+                    "beforeend",
+                    `
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="font-weight-bold card-title">${period.recipes[0].name}</h5>
+                            <p class="card-text">${period.period}</p>
+                            <form id="dataForm" action="../../receitas/preparar-receita/" method="GET">
+                                <button type="submit" class="btn visualizar">PREPARAR</button>
+                                <input type="hidden" name="recipeID" value="${period.recipes[0].recipeID}">
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                );
+            });
+        });
+    }
+}
+
+async function renderOptions() {
     let recipes = await getRecipes();
     recipes = recipes.map(({ RecipeSteps, RecipeIngredients, ...rest }) => ({
     ...rest,
@@ -104,55 +137,16 @@ export async function renderCalendar() {
         });
     });
 
-  document.querySelectorAll(".accordion-body").forEach((accordion) => {
-        accordion.insertAdjacentHTML(
-            "beforeend",
-            `
-            <button type="button" onclick="insertPlanningModal()" class="btn visualizar mb-3 planejar-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                PLANEJE SEU DIA!
-                </button>
-            `
-        );
-    });
-
-    if (!plannedRecipes.weekRecipes.length == 0) {
-
-        Array.from(document.querySelectorAll(".planejar-btn")).forEach( btn => btn.setAttribute("class", "d-none"))
-        
-        plannedRecipes.weekRecipes.forEach((day) => {
-            let weekDay = dayjs(day.day).$W == 0 ? 7 : dayjs(day.day).$W;
-            let divValue = "recipes-div-" + weekDay;
-            
-            day.periods.forEach((period) => {
-                document.getElementById(divValue).insertAdjacentHTML(
-                    "beforeend",
-                    `
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                            <h5 class="font-weight-bold card-title">${period.recipes[0].name}</h5>
-                            <p class="card-text">${period.period}</p>
-                            <form id="dataForm" action="../../receitas/preparar-receita/" method="GET">
-                                <button type="submit" class="btn visualizar">PREPARAR</button>
-                                <input type="hidden" name="recipeID" value="${period.recipes[0].recipeID}">
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                    `
-                );
-            });
-        });
-    }
 }
 
 window.renderCalendar = renderCalendar;
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("date-input").valueAsDate = new Date();
-  renderCalendar();
+    document.getElementById("date-input").valueAsDate = new Date();
+    renderCalendar();
+    renderOptions()
 });
 
 document
-  .getElementById("date-input")
-  .addEventListener("change", renderCalendar);
+    .getElementById("date-input")
+    .addEventListener("change", renderCalendar);
