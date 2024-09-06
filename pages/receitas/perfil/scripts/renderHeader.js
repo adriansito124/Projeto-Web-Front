@@ -1,56 +1,21 @@
-import { ingredientes, passos } from "./receita.js"
+
 
 const baseurl = "http://localhost:3000"
 
-function teste() {
-    console.log("teste uhul");
-}
+export async function getProfile() {
 
-export async function postReceita(event) {
-
-    event.preventDefault()
-    console.log(ingredientes);
-    console.log(passos);
-    console.log("oioiooioi");
-
-    const name = document.getElementById("nome_receita").value
-
-    if (name == "" ) {
-        alert("Por favor, insira ao menos o nome da receita para continuar.")
-        
-    } else {
-
-        const response = await fetch(
-    
-            `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/criar-receita`,
-            {
-                method: "POST",
-                headers: {
-                    "Authorization": localStorage.getItem("token"),
-                    "Content-Type": "application/json"
-                },
-    
-                body: JSON.stringify({
-                    name: name,
-                    ingredients: ingredientes,
-                    steps: passos
-                })
-            }
-        )
-    
-        
-        if (response.ok) {
-            if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
-    
-                window.location.href = "../minhas-receitas"
-            } else {
-                window.location.href = "../minhas-receitas"
-    
+    const response = await fetch(
+        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/receitas`,
+        {
+            method: "GET",
+            headers: {
+                "Authorization": localStorage.getItem("token"),
+                "Content-Type": "application/json"
             }
         }
-    }
+    )
 
-
+    return await response.json()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("header").insertAdjacentHTML("beforeend", `
             <div class="separa">
 
-            <h3 class="grande">Criar Receita</h3>
+            <h3 class="grande">Minhas Receitas</h3>
 
             <nav>
                 <div id="action-buttons-1">
@@ -76,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-3">
                     <ul>
-                        <li><a href="../perfil/"><img class="nav-icon"
+                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
                                     src="../../../img/icons/perfil.png" alt="perfil"></a></li>
                     </ul>
                 </div>
@@ -87,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </ul>
                 </div>
             </nav>
-        </div> 
+        </div>
         `)
     } else {
         document.getElementById("header").insertAdjacentHTML("beforeend", `
             <div class="separa">
 
-            <h3 class="grande">Criar Receita</h3>
+            <h3 class="grande">Minhas Receitas</h3>
 
             <nav>
                 <div id="action-buttons-1">
@@ -116,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="action-buttons-4">
                     <ul>
-                        <li><a href="../perfil/"><img class="nav-icon"
+                        <li><a href="../../paciente/perfil/"><img class="nav-icon"
                                     src="../../../img/icons/perfil.png" alt="perfil"></a></li>
                     </ul>
                 </div>
@@ -132,6 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+window.getRecipes = getRecipes
 
-window.teste = teste
-window.postReceita = postReceita
+
