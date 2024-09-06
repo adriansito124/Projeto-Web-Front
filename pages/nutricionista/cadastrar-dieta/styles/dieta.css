@@ -256,6 +256,8 @@ h6{
     font-weight: bold;
     background-color: #e45555;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
 }
 
 .excloi:hover{
