@@ -22,13 +22,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 export var receitas = [];
+export var morning = [];
+export var afternoon = [];
+export var lunch = [];
+export var evening = [];
 
 
 function adicionarReceitaManha(event) {
     event.preventDefault();
     console.log("aiai");
     let select = document.getElementById("manha");
-    let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_manha");
     let valor = select.value
     let valor1 = select.options[select.selectedIndex].text
@@ -36,7 +39,7 @@ function adicionarReceitaManha(event) {
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
+    morning.push({ "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -44,21 +47,21 @@ function adicionarReceitaManha(event) {
 
     document.getElementById("manha").value = "";
 
-    console.log(receitas);
+    console.log(morning);
 
-    receitas.forEach((receita, index) => {
+    morning.forEach((receita, index) => {
 
-        if (receita.period == "manha") {
-            colunas.insertAdjacentHTML("beforeend",
+
+        colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo paz">
                 <div class="maximo2 redod reto">
                     <h6 class="alinhaa">${receita.name}</h6>
                 </div>
-                <button id="" class="excloi">X</button>
+                <button id="${index}" onclick="deletarReceitaManha(${index})" class="excloi">X</button>
             </div>`
         )
-        }
-        
+
+
     })
 
     colunas.scrollIntoView({ behavior: 'smooth' });
@@ -68,18 +71,42 @@ function adicionarReceitaManha(event) {
 }
 
 
+
+function deletarReceitaManha(index) {
+    morning.splice(index, 1);
+
+    let colunas = document.getElementById("recipe_manha");
+    colunas.innerHTML = "";
+
+    console.log(receitas);
+
+    morning.forEach((receita, i) => {
+
+        colunas.insertAdjacentHTML("beforeend",
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button onclick="deletarReceitaManha(${i})" class="excloi">X</button>
+            </div>`
+        )
+    })
+
+}
+
+
+
 function adicionarReceitaTarde(event) {
     event.preventDefault();
     console.log("aiai");
     let select = document.getElementById("tarde");
-    let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_tarde");
     let valor = select.value
     let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
+    afternoon.push({ "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -87,22 +114,22 @@ function adicionarReceitaTarde(event) {
 
     document.getElementById("tarde").value = "";
 
-    console.log(receitas);
+    console.log(afternoon);
 
-    receitas.forEach((receita, index) => {
-        
-        if (receita.period == "tarde") {
-           colunas.insertAdjacentHTML("beforeend",
+    afternoon.forEach((receita, index) => {
+
+
+        colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo paz">
                 <div class="maximo2 redod reto">
                     <h6 class="alinhaa">${receita.name}</h6>
                 </div>
-                <button id="" class="excloi">X</button>
+                <button id="${index}" onclick="deletarReceitaTarde(${index})" class="excloi">X</button>
             </div>`
-        ) 
-        }
-        
-    })
+        )
+    }
+
+    )
 
     colunas.scrollIntoView({ behavior: 'smooth' });
 
@@ -110,18 +137,44 @@ function adicionarReceitaTarde(event) {
 
 }
 
+
+
+function deletarReceitaTarde(index) {
+    afternoon.splice(index, 1);
+
+    let colunas = document.getElementById("recipe_tarde");
+    colunas.innerHTML = "";
+
+    console.log(afternoon);
+
+    afternoon.forEach((receita, i) => {
+
+        colunas.insertAdjacentHTML("beforeend",
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button onclick="deletarReceitaTarde(${i})" class="excloi">X</button>
+            </div>`
+        )
+    })
+
+}
+
+
+
+
 function adicionarReceitaAlmoco(event) {
     event.preventDefault();
     console.log("aiai");
     let select = document.getElementById("almoco");
-    let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_almoco");
     let valor = select.value
     let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
+    lunch.push({ "recipeID": valor, "name": valor1 })
 
 
 
@@ -130,22 +183,22 @@ function adicionarReceitaAlmoco(event) {
 
     document.getElementById("almoco").value = "";
 
-    console.log(receitas);
+    console.log(lunch);
 
-    receitas.forEach((receita, index) => {
+    lunch.forEach((receita, index) => {
 
-        if (receita.period == "almoco") {
-           colunas.insertAdjacentHTML("beforeend",
+
+        colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo paz">
                 <div class="maximo2 redod reto">
                     <h6 class="alinhaa">${receita.name}</h6>
                 </div>
-                <button id="" class="excloi">X</button>
+                <button id="${index}" onclick="deletarReceitaAlmoco(${index})" class="excloi">X</button>
             </div>`
-        ) 
-        }
+        )
+    }
 
-    })
+    )
 
     colunas.scrollIntoView({ behavior: 'smooth' });
 
@@ -153,18 +206,44 @@ function adicionarReceitaAlmoco(event) {
 
 }
 
+
+
+function deletarReceitaAlmoco(index) {
+    lunch.splice(index, 1);
+
+    let colunas = document.getElementById("recipe_almoco");
+    colunas.innerHTML = "";
+
+    console.log(lunch);
+
+    lunch.forEach((receita, i) => {
+
+        colunas.insertAdjacentHTML("beforeend",
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button onclick="deletarReceitaAlmoco(${i})" class="excloi">X</button>
+            </div>`
+        )
+    })
+
+}
+
+
+
+
 function adicionarReceitaNoite(event) {
     event.preventDefault();
     console.log("aiai");
     let select = document.getElementById("noite");
-    let periodo = select.options[select.selectedIndex].getAttribute("period");
     let colunas = document.getElementById("recipe_noite");
     let valor = select.value
     let valor1 = select.options[select.selectedIndex].text
 
     colunas.innerHTML = "";
 
-    receitas.push({ "period": periodo, "recipeID": valor, "name": valor1 })
+    evening.push({ "recipeID": valor, "name": valor1 })
 
 
     // ingredientes.push(valor);
@@ -172,25 +251,49 @@ function adicionarReceitaNoite(event) {
 
     document.getElementById("noite").value = "";
 
-    console.log(receitas);
+    console.log(evening);
 
-    receitas.forEach((receita, index) => {
+    evening.forEach((receita, index) => {
 
-        if (receita.period == "noite") {
-            colunas.insertAdjacentHTML("beforeend",
+
+        colunas.insertAdjacentHTML("beforeend",
             `<div class="maximo paz">
                 <div class="maximo2 redod reto">
                     <h6 class="alinhaa">${receita.name}</h6>
                 </div>
-                <button id="" class="excloi">X</button>
+                <button id="${index}" onclick="deletarReceitaJanta(${index})" class="excloi">X</button>
             </div>`
-            )
-        }
-    })
+        )
+    }
+    )
 
     colunas.scrollIntoView({ behavior: 'smooth' });
 
     select.value = 'Selecione'
+}
+
+
+
+function deletarReceitaJanta(index) {
+    evening.splice(index, 1);
+
+    let colunas = document.getElementById("recipe_noite");
+    colunas.innerHTML = "";
+
+    console.log(evening);
+
+    evening.forEach((receita, i) => {
+
+        colunas.insertAdjacentHTML("beforeend",
+            `<div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button onclick="deletarReceitaJanta(${i})" class="excloi">X</button>
+            </div>`
+        )
+    })
+
 }
 
 
@@ -199,3 +302,7 @@ window.adicionarReceitaManha = adicionarReceitaManha;
 window.adicionarReceitaTarde = adicionarReceitaTarde;
 window.adicionarReceitaNoite = adicionarReceitaNoite;
 window.adicionarReceitaAlmoco = adicionarReceitaAlmoco;
+window.deletarReceitaManha = deletarReceitaManha;
+window.deletarReceitaTarde = deletarReceitaTarde;
+window.deletarReceitaAlmoco = deletarReceitaAlmoco;
+window.deletarReceitaJanta = deletarReceitaJanta;
