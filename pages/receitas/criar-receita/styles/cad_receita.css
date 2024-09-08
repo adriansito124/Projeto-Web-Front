@@ -210,3 +210,30 @@ h6{
 #input-ingredient {
     width: 300px;
 }
+
+.centrol {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+input::file-selector-button {
+    background-image: url("../../../../img/user.png");
+}
+
+#fileInput {
+    display: none;
+}
+
+.photo2 {
+    height: 200px;
+    width: 250px;
+
+    object-fit: cover;
+
+    border: 3px solid #07A37E   ;
+    border-radius: 10%;
+    cursor: pointer;
+}

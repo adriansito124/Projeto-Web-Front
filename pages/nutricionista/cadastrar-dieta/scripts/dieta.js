@@ -20,283 +20,137 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-
 export var receitas = [];
-export var morning = [];
-export var afternoon = [];
-export var lunch = [];
-export var evening = [];
+let morning = [];
+let afternoon = [];
+let lunch = [];
+let evening = [];
 
+function updateReceitas() {
+    receitas = [...morning, ...afternoon, ...lunch, ...evening];
+    console.log("Updated receitas:");
+    console.log(receitas);
+}
 
 function adicionarReceitaManha(event) {
     event.preventDefault();
-    console.log("aiai");
     let select = document.getElementById("manha");
     let colunas = document.getElementById("recipe_manha");
-    let valor = select.value
-    let valor1 = select.options[select.selectedIndex].text
+    let valor = select.value;
+    let valor1 = select.options[select.selectedIndex].text;
 
-
-    colunas.innerHTML = "";
-
-    morning.push({ "recipeID": valor, "name": valor1 })
-
-
-    // ingredientes.push(valor);
-    // quantidade.push(qtd);
-
+    morning.push({ recipeID: valor, name: valor1, period: "manha" });
     document.getElementById("manha").value = "";
 
-    console.log(morning);
-
-    morning.forEach((receita, index) => {
-
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button id="${index}" onclick="deletarReceitaManha(${index})" class="excloi">X</button>
-            </div>`
-        )
-
-
-    })
-
-    colunas.scrollIntoView({ behavior: 'smooth' });
-
-    select.value = 'Selecione'
+    renderReceitas(colunas, morning, deletarReceitaManha);
+    updateReceitas();
+    select.value = "Selecione";
 
 }
-
-
 
 function deletarReceitaManha(index) {
     morning.splice(index, 1);
-
     let colunas = document.getElementById("recipe_manha");
-    colunas.innerHTML = "";
+    renderReceitas(colunas, morning, deletarReceitaManha);
+    updateReceitas();
+    let select = document.getElementById("manha");
+    select.value = "Selecione";
 
-    console.log(receitas);
-
-    morning.forEach((receita, i) => {
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button onclick="deletarReceitaManha(${i})" class="excloi">X</button>
-            </div>`
-        )
-    })
 
 }
-
-
 
 function adicionarReceitaTarde(event) {
     event.preventDefault();
-    console.log("aiai");
     let select = document.getElementById("tarde");
     let colunas = document.getElementById("recipe_tarde");
-    let valor = select.value
-    let valor1 = select.options[select.selectedIndex].text
+    let valor = select.value;
+    let valor1 = select.options[select.selectedIndex].text;
 
-    colunas.innerHTML = "";
-
-    afternoon.push({ "recipeID": valor, "name": valor1 })
-
-
-    // ingredientes.push(valor);
-    // quantidade.push(qtd);
-
+    afternoon.push({ recipeID: valor, name: valor1, period: "tarde" });
     document.getElementById("tarde").value = "";
 
-    console.log(afternoon);
-
-    afternoon.forEach((receita, index) => {
-
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button id="${index}" onclick="deletarReceitaTarde(${index})" class="excloi">X</button>
-            </div>`
-        )
-    }
-
-    )
-
-    colunas.scrollIntoView({ behavior: 'smooth' });
-
-    select.value = 'Selecione'
+    renderReceitas(colunas, afternoon, deletarReceitaTarde);
+    updateReceitas();
+    select.value = "Selecione";
 
 }
-
-
 
 function deletarReceitaTarde(index) {
     afternoon.splice(index, 1);
-
     let colunas = document.getElementById("recipe_tarde");
-    colunas.innerHTML = "";
+    renderReceitas(colunas, afternoon, deletarReceitaTarde);
+    updateReceitas();
+    let select = document.getElementById("tarde");
+    select.value = "Selecione";
 
-    console.log(afternoon);
-
-    afternoon.forEach((receita, i) => {
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button onclick="deletarReceitaTarde(${i})" class="excloi">X</button>
-            </div>`
-        )
-    })
 
 }
-
-
-
 
 function adicionarReceitaAlmoco(event) {
     event.preventDefault();
-    console.log("aiai");
     let select = document.getElementById("almoco");
     let colunas = document.getElementById("recipe_almoco");
-    let valor = select.value
-    let valor1 = select.options[select.selectedIndex].text
+    let valor = select.value;
+    let valor1 = select.options[select.selectedIndex].text;
 
-    colunas.innerHTML = "";
-
-    lunch.push({ "recipeID": valor, "name": valor1 })
-
-
-
-    // ingredientes.push(valor);
-    // quantidade.push(qtd);
-
+    lunch.push({ recipeID: valor, name: valor1, period: "almoco" });
     document.getElementById("almoco").value = "";
 
-    console.log(lunch);
-
-    lunch.forEach((receita, index) => {
-
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button id="${index}" onclick="deletarReceitaAlmoco(${index})" class="excloi">X</button>
-            </div>`
-        )
-    }
-
-    )
-
-    colunas.scrollIntoView({ behavior: 'smooth' });
-
-    select.value = 'Selecione'
+    renderReceitas(colunas, lunch, deletarReceitaAlmoco);
+    updateReceitas();
+    select.value = "Selecione";
 
 }
-
-
 
 function deletarReceitaAlmoco(index) {
     lunch.splice(index, 1);
-
     let colunas = document.getElementById("recipe_almoco");
-    colunas.innerHTML = "";
-
-    console.log(lunch);
-
-    lunch.forEach((receita, i) => {
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button onclick="deletarReceitaAlmoco(${i})" class="excloi">X</button>
-            </div>`
-        )
-    })
-
+    renderReceitas(colunas, lunch, deletarReceitaAlmoco);
+    updateReceitas();
+    let select = document.getElementById("almoco");
+    select.value = "Selecione";
 }
-
-
-
 
 function adicionarReceitaNoite(event) {
     event.preventDefault();
-    console.log("aiai");
     let select = document.getElementById("noite");
     let colunas = document.getElementById("recipe_noite");
-    let valor = select.value
-    let valor1 = select.options[select.selectedIndex].text
+    let valor = select.value;
+    let valor1 = select.options[select.selectedIndex].text;
 
-    colunas.innerHTML = "";
-
-    evening.push({ "recipeID": valor, "name": valor1 })
-
-
-    // ingredientes.push(valor);
-    // quantidade.push(qtd);
-
+    evening.push({ recipeID: valor, name: valor1, period: "noite" });
     document.getElementById("noite").value = "";
 
-    console.log(evening);
+    renderReceitas(colunas, evening, deletarReceitaJanta);
+    updateReceitas();
+    select.value = "Selecione";
 
-    evening.forEach((receita, index) => {
-
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button id="${index}" onclick="deletarReceitaJanta(${index})" class="excloi">X</button>
-            </div>`
-        )
-    }
-    )
-
-    colunas.scrollIntoView({ behavior: 'smooth' });
-
-    select.value = 'Selecione'
 }
-
-
 
 function deletarReceitaJanta(index) {
     evening.splice(index, 1);
-
     let colunas = document.getElementById("recipe_noite");
-    colunas.innerHTML = "";
-
-    console.log(evening);
-
-    evening.forEach((receita, i) => {
-
-        colunas.insertAdjacentHTML("beforeend",
-            `<div class="maximo paz">
-                <div class="maximo2 redod reto">
-                    <h6 class="alinhaa">${receita.name}</h6>
-                </div>
-                <button onclick="deletarReceitaJanta(${i})" class="excloi">X</button>
-            </div>`
-        )
-    })
+    renderReceitas(colunas, evening, deletarReceitaJanta);
+    updateReceitas();
+    let select = document.getElementById("noite");
+    select.value = "Selecione";
 
 }
 
-
+function renderReceitas(colunas, array, deleteFunction) {
+    colunas.innerHTML = "";
+    array.forEach((receita, index) => {
+        colunas.insertAdjacentHTML("beforeend", `
+            <div class="maximo paz">
+                <div class="maximo2 redod reto">
+                    <h6 class="alinhaa">${receita.name}</h6>
+                </div>
+                <button onclick="${deleteFunction.name}(${index})" class="excloi">X</button>
+            </div>`
+        );
+    });
+    colunas.scrollIntoView({ behavior: 'smooth' });
+}
 
 window.adicionarReceitaManha = adicionarReceitaManha;
 window.adicionarReceitaTarde = adicionarReceitaTarde;

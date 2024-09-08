@@ -1,5 +1,7 @@
 const baseurl = "http://localhost:3000"
 
+document.getElementById("fileInput").addEventListener("change", () => console.log("mudei"))
+
 export async function postPacient(event) {
 
     const name = document.getElementById("name").value
@@ -12,6 +14,14 @@ export async function postPacient(event) {
         
     } else {
         // fazendo a requisição completa, endpoint com headers e body
+        const formData = new FormData()
+        formData.append("photo", document.getElementById("fileInput").files[0])
+        const imageResponse = await fetch(`${baseurl}/files`, {
+            method: "POST",
+            body: formData
+        }) 
+        const imageUrl = (await imageResponse.json()).filePath
+ 
         const response = await fetch(
             `${baseurl}/nutri/${JSON.parse(localStorage.getItem("userInfo")).Nutricionist.nutricionistID}/cadastrar-paciente`,
             {
@@ -19,16 +29,17 @@ export async function postPacient(event) {
                 headers: {
                     "Authorization": localStorage.getItem("token"),
                     "Content-Type": "application/json"
-                },
+                },  
                 
                 body: JSON.stringify({
                     name: name, 
                     email: email, 
                     password: password, 
-                    userType: userType
+                    userType: userType,
+                    profilePicture: imageUrl
                 })
             }
-        )    
+        )
 
         const data = await response.json()
 
@@ -39,7 +50,6 @@ export async function postPacient(event) {
         }
 
         event.target.parentElement.submit();
-
     }
 }
 

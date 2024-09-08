@@ -78,19 +78,19 @@
                 <div class="card-body d-flex flex-column align-items-center" style="width: 100%; gap: 35px;">
                     <div class="extended">
                         <h6>Nome</h6>
-                        <input id="name" class="extended redod" type="text" placeholder="Digite aqui...">
+                        <input id="name" class="extended redod" type="text" placeholder="Digite aqui..." required>
                     </div>
                     <div class="extended">
                         <h6>Email</h6>
-                        <input id="email" class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="email" class="max redod" type="text" placeholder="Digite aqui..." required>
                     </div>
                     <div class="extended">
                         <h6>Senha</h6>
-                        <input id="password" class="max redod" type="text" placeholder="Digite aqui...">
+                        <input id="password" class="max redod" type="text" placeholder="Digite aqui..." required>
                     </div>
                     <form id="dataForm" action="../cadastrar-dieta/" method="GET">
                         <!-- <button onclick="postPacient(event)" type="button" class="btn visualizar">CADASTRAR</button> -->
-                        <button onclick="postPacient(event)" class="btn visualizar" style="text-align: start;">
+                        <button onclick="postPacient(event)" type="button" class="btn visualizar" style="text-align: start;">
                             <h5>CADASTRAR</h5>
                         </button>
                         <input type="hidden" id="pacientInfo" name="pacientID" value="">

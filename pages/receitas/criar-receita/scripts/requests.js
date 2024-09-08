@@ -8,6 +8,14 @@ function teste() {
 
 export async function postReceita(event) {
 
+    const formData = new FormData()
+    formData.append("photo", document.getElementById("fileInput").files[0])
+    const imageResponse = await fetch(`${baseurl}/files`, {
+        method: "POST",
+        body: formData
+    }) 
+    const imageUrl = (await imageResponse.json()).filePath
+
     event.preventDefault()
     console.log(ingredientes);
     console.log(passos);
@@ -33,7 +41,8 @@ export async function postReceita(event) {
                 body: JSON.stringify({
                     name: name,
                     ingredients: ingredientes,
-                    steps: passos
+                    steps: passos,
+                    picture: imageUrl
                 })
             }
         )

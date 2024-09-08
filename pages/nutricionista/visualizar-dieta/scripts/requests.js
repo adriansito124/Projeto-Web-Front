@@ -1,4 +1,4 @@
-import { receitas } from "./dieta.js";
+import { newRecipes } from "./dieta.js";
 
 const baseurl = "http://localhost:3000"
 
@@ -28,7 +28,6 @@ export async function updateDiet() {
     const protein = document.getElementById("protein").value
     const carbs = document.getElementById("carbs").value
     const fat = document.getElementById("fat").value
-    const newRecipes = receitas;
 
     const body = {
         calories: calories, 
@@ -40,10 +39,6 @@ export async function updateDiet() {
     }
     
     console.log(body);
-    
-
-    // console.log(localStorage.getItem("userInfo").Pacient.dietID);
-    
     console.log(diet.dietID);
     
 
@@ -60,12 +55,12 @@ export async function updateDiet() {
         }
     )    
 
-    // if (response.ok) {
-    //     window.location.href = "../meus-pacientes/"
+    if (response.ok) {
+        window.location.href = "../meus-pacientes/"
         
-    // } else {
-    //     // toastify
-    // }
+    } else {
+        // toastify
+    }
 }
 
 window.addEventListener("DOMContentLoaded", renderDiet());

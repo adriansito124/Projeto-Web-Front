@@ -9,6 +9,8 @@ function adicionarIngrediente(event) {
     let medida = document.getElementById("medida").value;
     let colunas = document.getElementById("ingredients");
 
+    
+
     colunas.innerHTML = "";
 
     ingredientes.push({"name" : valor, "quantity": qtd, "measure": medida})

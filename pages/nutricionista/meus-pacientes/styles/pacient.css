@@ -1,9 +1,4 @@
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    
-}
+
 
 #bread-crumbs {
     /* position: absolute; */
@@ -41,7 +36,9 @@ main {
 }
 
 .card-img-top {
-    width: 80%;
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
     margin-top: 10px;
 }
 
@@ -102,11 +99,6 @@ main {
     font-weight: 700;
 }
 
-.card-img-top {
-    width: 80%;
-    margin-top: 10px;
-}
-
 
 .visualizar2 {
     background-color: #07A37E;
@@ -149,14 +141,14 @@ main {
 }
 
 #greetings {
-    margin-top: 80px;
+    /* margin-top: 80px; */
     display: flex;
     align-items: center;
 }
 
 #greetings > h3 {
     color: var(--verde-fonte);
-}
+} 
 
 .img-greetings {
     max-width: 35px;

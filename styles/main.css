@@ -1,10 +1,10 @@
 main {
     background-color: var(--claro);
-    height: 90vh;
-    width: 100vw;
+    min-height: 90vh;
+    /* width: 100vw; */
     display: flex;
     justify-content: start;
-    margin-top: 10vh;
+    margin-top: 50px;
     flex-direction: column;
 }
 

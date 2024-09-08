@@ -17,10 +17,16 @@ async function renderizarPacientes() {
         cards.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary" role="alert">Sem pacientes cadastrados.</p>`)
     } else {
         Array.from(pacientes).forEach( paciente => {
+
+            
+
+            let src = paciente.profilePicture ? "http://localhost:3000/files/" + paciente.profilePicture : "../../../img/user.png"
+            console.log(src);
+            
             cards.insertAdjacentHTML("beforeend",
                 `<div id="cards" class="row d-flex flex-wrap justify-content-center">
                     <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
-                        <img src="../../../img/Penguins.jpg" class="card-img-top" alt="...">
+                        <img src="${src}" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">${paciente.name}</h5>
                             <div id="action-buttons">
