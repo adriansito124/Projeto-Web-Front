@@ -87,24 +87,23 @@
     <header id="header">
 
       </header>
-    <main id="main">
+    <main>
         <div class="extended">
-            <img class="card-img-top foto" src="../../../img/ratinho-perfil.jpg">
-            <h1>Joaquim Silva</h1>
-            <h4>Joaquim@email</h4>
+            <img id="profilePicture" class="card-img-top foto" src="">
+            <h1 id="name"></h1>
+            <h4 id="email" ></h4>
             <div class="config">
                 <div class="redod">
                     <h4 class="a">DARK MODE</h4>
                     <button onclick="troca()" id="mod" class="claro"></button>
                 </div>
-                <div class="redod luz" id="redod2">
+                <div class="redod">
                     <h4 class="a">EDITAR PERFIL</h4>
-                    <button class="butao"><img class="lapis" src="../../../img/icons/edit.png"></button>
+                    <button type="button" class="butao" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="lapis" src="../../../img/icons/edit.png"></button>
                 </div>
             </div>
         </div>
     </main>
-
     <script src="./perfil.js"></script>
 </body>
 
