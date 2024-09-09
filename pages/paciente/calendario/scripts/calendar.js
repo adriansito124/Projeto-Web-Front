@@ -177,3 +177,5 @@ document.addEventListener("DOMContentLoaded", () => {
 document
     .getElementById("date-input")
     .addEventListener("change", renderCalendar);
+
+

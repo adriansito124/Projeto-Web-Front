@@ -113,3 +113,4 @@ window.deletarIngrediente = deletarIngrediente
 window.atualizarIngredientes = atualizarIngredientes
 window.adicionarPasso = adicionarPasso
 window.deletarPasso = deletarPasso
+

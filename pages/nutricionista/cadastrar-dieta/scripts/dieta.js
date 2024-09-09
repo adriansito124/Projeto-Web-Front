@@ -160,3 +160,5 @@ window.deletarReceitaManha = deletarReceitaManha;
 window.deletarReceitaTarde = deletarReceitaTarde;
 window.deletarReceitaAlmoco = deletarReceitaAlmoco;
 window.deletarReceitaJanta = deletarReceitaJanta;
+
+

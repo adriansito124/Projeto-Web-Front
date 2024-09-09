@@ -33,7 +33,14 @@ export async function deleteNutri(id) {
         )    
     
         if (response.ok) {
-            // toastify
+            window.location.reload
+            Toastify({
+                text: "Nutricionista deletado com sucesso!",
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)"
+                  },
+                duration: 2000
+            }).showToast();
         }
     }
 

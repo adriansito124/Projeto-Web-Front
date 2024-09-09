@@ -4,7 +4,7 @@ export async function renderProfile(res) {
     let src = res.profilePicture ? "http://localhost:3000/files/" + res.profilePicture : "../../../img/user.jpg"
 
     document.getElementById("name").innerText = res.name
-    document.getElementById("email").innerText = res.name
+    document.getElementById("email").innerText = res.email
     document.getElementById("profilePicture").src = src
     document.getElementById("name-input").value = res.name
     document.getElementById("email-input").value = res.email
@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 window.renderProfile = renderProfile 
+
+
 
 
 

@@ -38,3 +38,17 @@ export async function renderRecipe(event) {
 
 
 document.addEventListener("DOMContentLoaded", renderRecipe)
+
+document.addEventListener("DOMContentLoaded", () => {
+    let body = document.body
+
+    if (localStorage.getItem("darkMode") == "true" ) {
+
+        body.setAttribute("data-bs-theme", "dark") 
+    } else {
+        body.setAttribute("data-bs-theme", "light") 
+    }
+})
+
+
+window.getRecipe = getRecipe

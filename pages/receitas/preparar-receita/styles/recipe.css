@@ -16,6 +16,10 @@
     border: none;
 }
 
+#title {
+    font-size: 2rem;
+}
+
 .extended{
     width: 100%;
     display: flex;

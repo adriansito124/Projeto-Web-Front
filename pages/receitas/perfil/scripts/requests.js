@@ -69,6 +69,8 @@ export async function updateUser() {
           backdrop.remove();
         }
 
+        window.location.reload
+
         Toastify({
             text: "Informações aletardas com sucesso!",
             style: {

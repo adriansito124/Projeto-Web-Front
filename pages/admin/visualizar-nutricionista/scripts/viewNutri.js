@@ -13,10 +13,14 @@ async function renderizarNutri() {
         cards.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary" role="alert">Sem nutricionistas cadastrados.</p>`)
     } else {
         Array.from(nutris).forEach( nutri => {
+
+            let src = nutri.profilePicture ? "http://localhost:3000/files/" + nutri.profilePicture : "../../../img/user-logo.png"
+            console.log(src);
+
             cards.insertAdjacentHTML("beforeend",
                 `<div id="cards" class="row d-flex flex-wrap justify-content-center">
                     <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
-                        <img src="../../../img/Penguins.jpg" class="card-img-top" alt="...">
+                        <img src="${src}" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">${nutri.name}</h5>
                             <h5 class="card-title">${nutri.Nutricionist.CRN}</h5>

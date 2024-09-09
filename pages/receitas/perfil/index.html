@@ -39,6 +39,8 @@
     <!-- SCRIPT -->
     <script type="module" defer src="./scripts/renderHeader.js"></script>
     <script type="module" defer src="./scripts/requests.js"></script>
+    <script defer src="../../../dark.js" type="module"></script>
+
     <!-- SCRIPT -->
 
 
@@ -51,7 +53,7 @@
 <link rel="stylesheet" href="../../../img/icons/logo colorida.png">
 <link rel="icon" href="../../../img/icons/logo colorida.png">
 </head>
-<body>
+<body id="body">
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -85,26 +87,24 @@
   </div>
   </div>
     <header id="header">
-
       </header>
-    <main>
+    <main id="main">
         <div class="extended">
             <img id="profilePicture" class="card-img-top foto" src="">
             <h1 id="name"></h1>
             <h4 id="email" ></h4>
-            <div class="config">
-                <div class="redod">
+            <div class="config" id="config">
+                <div class="redod" id="redod">
                     <h4 class="a">DARK MODE</h4>
                     <button onclick="troca()" id="mod" class="claro"></button>
                 </div>
-                <div class="redod">
+                <div class="redod" id="redod2">
                     <h4 class="a">EDITAR PERFIL</h4>
                     <button type="button" class="butao" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="lapis" src="../../../img/icons/edit.png"></button>
                 </div>
             </div>
         </div>
     </main>
-    <script src="./perfil.js"></script>
 </body>
 
 </html>
