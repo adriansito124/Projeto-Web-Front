@@ -1,21 +1,13 @@
 
+export async function renderProfile(res) {
 
-const baseurl = "http://localhost:3000"
+    let src = res.profilePicture ? "http://localhost:3000/files/" + res.profilePicture : "../../../img/user.jpg"
 
-export async function getProfile() {
-
-    const response = await fetch(
-        `${baseurl}/user/${JSON.parse(localStorage.getItem("userInfo")).userID}/receitas`,
-        {
-            method: "GET",
-            headers: {
-                "Authorization": localStorage.getItem("token"),
-                "Content-Type": "application/json"
-            }
-        }
-    )
-
-    return await response.json()
+    document.getElementById("name").innerText = res.name
+    document.getElementById("email").innerText = res.name
+    document.getElementById("profilePicture").src = src
+    document.getElementById("name-input").value = res.name
+    document.getElementById("email-input").value = res.email
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -97,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-window.getProfile = getProfile
+window.renderProfile = renderProfile 
+
+
+
 
 

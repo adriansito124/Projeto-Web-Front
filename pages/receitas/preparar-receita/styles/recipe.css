@@ -1,11 +1,11 @@
-.foto{
+#picture{
     padding: 2px;
-    border-radius: 0%;
-    /* border: 5px, solid, rgb(100, 100, 100); */
+    border-radius: 10%;
+    border: 5px, solid, #07A37E;
     width: 100%;
     margin-top: 20px;
-    max-width: 250px;
-    max-height: 170px;
+    max-width: 350px;
+    max-height: 250px;
     object-fit: cover;
     background-color: #E8E8E8;
 }
@@ -17,7 +17,6 @@
 }
 
 .extended{
-    margin-top: 80px;
     width: 100%;
     display: flex;
     flex-direction: column;

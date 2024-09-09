@@ -4,8 +4,6 @@ export async function getRecipe() {
 
     const id = new URLSearchParams(window.location.search).get("recipeID");
 
-    console.log(id);
-    
     // fazendo a requisição completa, endpoint com headers e body
     const response = await fetch(
         `${baseurl}/user/${id}/visualizar-receita`,
@@ -18,7 +16,7 @@ export async function getRecipe() {
         }
     )
 
-    return await response.json()
+    return await response.json();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

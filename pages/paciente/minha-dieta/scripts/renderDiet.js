@@ -51,7 +51,7 @@ async function renderDiet() {
                         <h5 class="card-title">${element.name}</h5>
                         <div id="action-buttons">
                         <form id="dataForm" action="../../receitas/preparar-receita/" method="GET">
-                            <button type="submit" class="btn visualizar">TESTE</button>
+                            <button type="submit" class="btn visualizar">PREPARAR</button>
                             <input type="hidden" name="recipeID" value="${element.recipeID}">
                         </form>
                         </div>

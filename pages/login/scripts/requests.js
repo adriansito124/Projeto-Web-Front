@@ -44,6 +44,17 @@ async function signIn() {
                 break;
         }
         console.log(data);
+
+    } else {
+        console.log(data);
+
+        Toastify({
+            text: "E-mail ou senha incorretos!",
+            style: {
+                background: "linear-gradient(to right, rgba(255,78,0,1), rgba(255,171,0,1)"
+              },
+            duration: 2000
+        }).showToast();
     }
 
 }   

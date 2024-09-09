@@ -3,14 +3,14 @@ import { getRecipe } from "./scripts/requests.js";
 export async function renderRecipe(event) {
     event.preventDefault()
     console.log("oioi");
-    let corpo = document.getElementById("corpo");
-
     const recipe = await getRecipe();
 
     console.log(recipe);
 
-    let title = document.getElementById("title").innerText = recipe.name
-    
+    let src = recipe.picture ? "http://localhost:3000/files/" + recipe.picture : "../../../img/food-picture.jpg"
+
+    document.getElementById("picture").src = src
+    document.getElementById("title").innerText = recipe.name
 
     let ing = document.getElementById("ing-id")
 
