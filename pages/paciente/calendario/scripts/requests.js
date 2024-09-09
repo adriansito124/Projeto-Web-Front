@@ -37,6 +37,19 @@ export function insertPlanningModal(e) {
 
 }
 
+// export function updatePlanningModal(e) {
+//     document.getElementById("modal-form").setAttribute("data-value", e.target.getAttribute("data-value"))
+//     console.log(document.getElementById("modal-form").getAttribute("data-value"));
+//     console.log(document.getElementById("manha"));
+//     document.getElementById("manha").value = "bolinho";
+
+//     // document.getElementById("manha").value = "abobrinha"
+//     document.getElementById("almoco").value
+//     document.getElementById("tarde").value
+//     document.getElementById("noite").value
+
+// }
+
 export async function insertPlanning() {
 
     let manha = document.getElementById("manha").value
