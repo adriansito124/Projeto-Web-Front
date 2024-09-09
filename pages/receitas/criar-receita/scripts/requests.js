@@ -46,17 +46,19 @@ export async function postReceita(event) {
                 })
             }
         )
+
+        console.log(imageUrl);
     
         
-        if (response.ok) {
-            if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
+        // if (response.ok) {
+        //     if (JSON.parse(localStorage.getItem("userInfo")).userType == 1) {
     
-                window.location.href = "../minhas-receitas"
-            } else {
-                window.location.href = "../minhas-receitas"
+        //         window.location.href = "../minhas-receitas"
+        //     } else {
+        //         window.location.href = "../minhas-receitas"
     
-            }
-        }
+        //     }
+        // }
     }
 
 
