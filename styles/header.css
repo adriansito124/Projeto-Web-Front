@@ -10,7 +10,6 @@ header {
     flex-direction: row;
     align-items: center;
     padding: 20px;
-    box-shadow: 0px 8px 20px 5px rgba(255,255,255,1);
 }
 
 #bread-crumbs {
@@ -63,4 +62,12 @@ a:hover {
     align-items: center;
     color: white;
     gap: 20px;
+}
+
+.darkbox{
+    box-shadow: 0px 8px 20px 5px var(--escuro);
+}
+
+.lightbox{
+    box-shadow: 0px 8px 20px 5px rgba(255,255,255,1);
 }

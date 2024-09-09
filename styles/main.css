@@ -18,3 +18,27 @@ main {
     color: var(--verde-fonte);
 
 }
+
+.dark{
+    color: white;
+    background-color: var(--escuro);
+}
+
+.luz{
+    background-color: #E8E8E8;
+}
+
+.luz2{
+    background-color: #DADADA;
+    color:black
+}
+
+.camada2{
+    color: white;
+    background-color: var(--layer2);
+}
+
+.camada3{
+    color: white;
+    background-color: var(--layer3);
+}
