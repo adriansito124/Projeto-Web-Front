@@ -210,6 +210,31 @@ export async function updatePlanning() {
     
 }
 
+export async function getList() {
+
+    let date = dayjs(document.getElementById("date-input").value, 'DD/MM/YYYY')
+
+    const startOfWeek = dayjs(date).startOf('isoWeek');
+
+    const weekNumber = startOfWeek.isoWeek(); 
+
+    const response = await fetch(
+        `${baseurl}/pacient/${JSON.parse(localStorage.getItem("userInfo")).Pacient.pacientID}/lista-de-compras`,
+        {
+            method: "POST",
+            headers: {
+                "Authorization": localStorage.getItem("token"),
+                "Content-Type": "application/json"
+            },
+            
+            body: JSON.stringify({
+                week: weekNumber
+            })
+        }
+    )  
+
+    return await response.json()
+}
 
 window.getPlannedRecipes = getPlannedRecipes;
 window.insertPlanningModal = insertPlanningModal;

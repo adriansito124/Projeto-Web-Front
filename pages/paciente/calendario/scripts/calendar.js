@@ -1,6 +1,6 @@
 import { getRecipes } from "../../../receitas/minhas-receitas/scripts/requests.js";
 import { getDiet } from "../../minha-dieta/scripts/requests.js";
-import { getPlannedRecipes } from "./requests.js";
+import { getList, getPlannedRecipes } from "./requests.js";
 
 dayjs.extend(dayjs_plugin_isoWeek);
 dayjs.extend(dayjs_plugin_localeData);
@@ -173,12 +173,46 @@ async function renderOptions() {
 
 }
 
+async function renderList() {
+
+    let list = await getList()
+
+    console.log(list);
+    console.log(list.result);
+
+    let divList = document.getElementById("list")
+
+    if(list.result == []) {
+        divList.insertAdjacentHTML("beforeend", 
+            `
+            <p id="no-nutri" class="alert alert-primary" role="alert">Sem planejamento para essa semana!</p>
+
+            `
+        )
+    }
+
+    list.result.forEach( (item, index) => {
+        divList.insertAdjacentHTML("beforeend", 
+            `
+            <div class="form group">
+                <input type="checkbox" id="item-${index}">
+                <label class="ml-3" for=""><h5>${item.quantity} ${item.measureSystem} ${item.name}</h5></label>
+            </div>
+            
+            `
+        )
+    })
+
+}
+
 window.renderCalendar = renderCalendar;
+window.renderList = renderList;
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("date-input").valueAsDate = new Date();
     renderCalendar();
     renderOptions();
+    renderList();
     document.getElementById("greetings").insertAdjacentHTML("beforeend", `
         <h3>O que vamos preparar hoje, <b>${JSON.parse(localStorage.getItem("userInfo")).name}<span>? 🥗</span></b></h3>    
     `)

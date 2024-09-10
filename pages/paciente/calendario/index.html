@@ -66,43 +66,42 @@
 
 <body id="body">
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 id="modal-title" class="modal-title">Planeje seu dia!</h5>
-        </div>
-        <div class="modal-body">
-          <form data-value="" id="modal-form">
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Café da Manhã</label>
-              <select class="form-control recipe-select" id="manha">
-                <option selected hidden>Selecione uma receita para a refeição</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Almoço</label>
-              <select class="form-control recipe-select" id="almoco">
-                <option selected hidden>Selecione uma receita para a refeição</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Café da Tarde</label>
-              <select class="form-control recipe-select" id="tarde">
-                <option selected hidden>Selecione uma receita para a refeição</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Janta</label>
-              <select class="form-control recipe-select" id="noite">
-                <option selected hidden>Selecione uma receita para a refeição</option>
-              </select>
-            </div>
-            <button id="modal-btn" type="button" onclick="insertPlanning()" class="btn btn-primary mt-3">ENVIAR</button>
-          </form>
-        </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="modal-title" class="modal-title">Planeje seu dia!</h5>
       </div>
+      <div class="modal-body">
+        <form data-value="" id="modal-form">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Café da Manhã</label>
+            <select class="form-control recipe-select" id="manha">
+              <option selected hidden>Selecione uma receita para a refeição</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Almoço</label>
+            <select class="form-control recipe-select" id="almoco">
+              <option selected hidden>Selecione uma receita para a refeição</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Café da Tarde</label>
+            <select class="form-control recipe-select" id="tarde">
+              <option selected hidden>Selecione uma receita para a refeição</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Janta</label>
+            <select class="form-control recipe-select" id="noite">
+              <option selected hidden>Selecione uma receita para a refeição</option>
+            </select>
+          </div>
+          <button id="modal-btn" type="button" onclick="insertPlanning()" class="btn btn-primary mt-3">ENVIAR</button>
+        </form>
+      </div>
+    </div>
     </div>
   </div>
   </div>
@@ -160,8 +159,12 @@
         </div>
       </div>
     </div>
+    <div id="shopping-list" class="container mt-5 mb-5">
+      <h3>Sua <b> lista de compras </b> para a semana! 🛒</h3>
+      <div id="list" class="card p-4">
+      </div>
+    </div>
   </main>
   <script src="../../../dark.js"></script>
 </body>
-
 </html>

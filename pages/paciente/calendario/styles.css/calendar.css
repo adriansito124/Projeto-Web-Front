@@ -5,7 +5,7 @@
     justify-content: start;
     align-items: center;
     gap: 50px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     color: #07A37E;
     /* position: relative; */
 }
@@ -56,6 +56,10 @@
 }
 
 #greetings > h3 {
+    color: var(--verde-fonte);
+}
+
+#shopping-list > h3 {
     color: var(--verde-fonte);
 }
 
@@ -119,3 +123,15 @@ form {
     align-self: end;
 
 }
+
+#list {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input[type="checkbox"] {
+    width: 1em;
+    height: 1rem;
+  }
+  
