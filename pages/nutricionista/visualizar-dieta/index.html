@@ -31,6 +31,11 @@
     <script src="./scripts/dieta.js" type="module" defer></script>
     <script src="./scripts/requests.js" type="module" defer></script>
 
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- TOASTIFY -->  
+
 
     <title>Criar Dieta</title>
 <link rel="stylesheet" href="../../../img/icons/logo colorida.png">
@@ -74,7 +79,7 @@
 
         </div>
     </header>
-    <main id="main">
+    <main id="main" class="d-flex flex-column align-items-center">
         <div class="main">
             <div class="visual">
                 <button onclick="updateDiet()" class="visualizar">EDITAR</button>
@@ -125,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class="centrol">
+            <div id="warning" class="centrol d-flex flex-column align-items-center">
                 <h4 class="borda2">RECEITAS</h4>
             </div>
             <div class="info2" style="margin-top: 20px;">

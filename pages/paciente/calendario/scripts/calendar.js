@@ -6,6 +6,8 @@ dayjs.extend(dayjs_plugin_isoWeek);
 dayjs.extend(dayjs_plugin_localeData);
 dayjs.extend(dayjs_plugin_advancedFormat);
 
+
+
 export async function renderCalendar() {
     document.getElementById("selecione-alert").setAttribute("class", "d-none");
 
@@ -67,6 +69,9 @@ export async function renderCalendar() {
                         <button type="button" id="planejar-btn-${index + 1}" data-value="${days[index]}" onclick="insertPlanningModal(event)" class="btn visualizar mb-3 planejar-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             PLANEJE SEU DIA!
                         </button>
+                        <button type="button" id="editar-btn-${index + 1}" data-value="${days[index]}" onclick="updatePlanningModal(event)" class="btn visualizar mb-3 editar-btn d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            EDITE SEU PLANEJAMENTO
+                        </button>
                         </div>
                     </div>
                 </div>
@@ -80,9 +85,11 @@ export async function renderCalendar() {
             let weekDay = dayjs(day.day).$W == 0 ? 7 : dayjs(day.day).$W;
             let divValue = "recipes-div-" + weekDay;
             let btn = "planejar-btn-" + weekDay;
+            let btnEditar = "editar-btn-" + weekDay;
 
             
             document.getElementById(btn).setAttribute("class", "d-none")
+            document.getElementById(btnEditar).setAttribute("class", "btn visualizar mb-3 planejar-btn mt-3")
             
             day.periods.forEach((period) => {
                 
@@ -171,7 +178,10 @@ window.renderCalendar = renderCalendar;
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("date-input").valueAsDate = new Date();
     renderCalendar();
-    renderOptions()
+    renderOptions();
+    document.getElementById("greetings").insertAdjacentHTML("beforeend", `
+        <h3>O que vamos preparar hoje, <b>${JSON.parse(localStorage.getItem("userInfo")).name}<span>? 🥗</span></b></h3>    
+    `)
 });
 
 document

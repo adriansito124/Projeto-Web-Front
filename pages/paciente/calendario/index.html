@@ -71,7 +71,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Planeje seu dia!</h5>
+          <h5 id="modal-title" class="modal-title">Planeje seu dia!</h5>
         </div>
         <div class="modal-body">
           <form data-value="" id="modal-form">
@@ -94,12 +94,12 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Café da Manhã</label>
+              <label for="exampleFormControlSelect1">Janta</label>
               <select class="form-control recipe-select" id="noite">
                 <option selected hidden>Selecione uma receita para a refeição</option>
               </select>
             </div>
-            <button type="button" onclick="insertPlanning()" class="btn btn-primary mt-3">ENVIAR</button>
+            <button id="modal-btn" type="button" onclick="insertPlanning()" class="btn btn-primary mt-3">ENVIAR</button>
           </form>
         </div>
       </div>
@@ -147,6 +147,8 @@
     </div>
   </header>
   <main id="main">
+    <div id="greetings" class="container mt-3 mb-3">
+    </div>
     <div class="main">
       <div id="selecione-alert" class="alert alert-primary" role="alert">
         Selecione um dia para visualizar sua semana! 😊

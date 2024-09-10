@@ -21,8 +21,6 @@ export async function renderDiet() {
 
 export async function updateDiet() {
 
-    const diet = await renderDiet();
-
     const calories = document.getElementById("calories").value
     const water = document.getElementById("water").value
     const protein = document.getElementById("protein").value
@@ -39,11 +37,9 @@ export async function updateDiet() {
     }
     
     console.log(body);
-    console.log(diet.dietID);
-    
 
     const response = await fetch(
-        `${baseurl}/nutri/updateDiet/${diet.dietID}`,
+        `${baseurl}/nutri/updateDiet/${new URLSearchParams(window.location.search).get("pacientID")}`,
         {
             method: "PATCH",
             headers: {
@@ -56,10 +52,22 @@ export async function updateDiet() {
     )    
 
     if (response.ok) {
-        window.location.href = "../meus-pacientes/"
+        Toastify({
+            text: "Dieta alterada com sucesso!",
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)"
+              },
+            duration: 2000
+        }).showToast();
         
     } else {
-        // toastify
+        Toastify({
+            text: "Erro ao alterar a dieta.",
+            style: {
+                background: "linear-gradient(to right, rgba(255,78,0,1), rgba(255,171,0,1)"
+              },
+            duration: 2000
+        }).showToast();
     }
 }
 

@@ -1,7 +1,7 @@
 
 export async function renderProfile(res) {
 
-    let src = res.profilePicture ? "http://localhost:3000/files/" + res.profilePicture : "../../../img/user.jpg"
+    let src = res.profilePicture ? "http://localhost:3000/files/" + res.profilePicture : "../../../img/user-logo.png"
 
     document.getElementById("name").innerText = res.name
     document.getElementById("email").innerText = res.email
