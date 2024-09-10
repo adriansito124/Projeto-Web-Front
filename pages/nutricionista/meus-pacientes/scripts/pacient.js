@@ -31,7 +31,7 @@ async function renderizarPacientes() {
                             <h5 class="card-title">${paciente.name}</h5>
                             <div id="action-buttons">
                                 <form id="dataForm" action="../visualizar-dieta/" method="GET">
-                                    <button type="submit" class="btn visualizar">VISUALIZAR</button>
+                                    <button type="submit" class="btn visualizar2">VISUALIZAR</button>
                                     <input type="hidden" name="pacientID" value="${paciente.Pacient.pacientID}">
                                 </form>
                                 <button onclick="deletePacient(${paciente.userID})" class="btn btn-danger">DELETAR</button>

@@ -45,7 +45,7 @@ async function renderDiet() {
 
         accordionBody.insertAdjacentHTML("beforeend", `
             <div id="cards" class="row d-flex flex-wrap justify-content-center">
-                <div class="card d-flex flex-column align-items-center" style="width: 18rem;">
+                <div class="card d-flex flex-column align-items-center" style="margin-top: 25px; width: 18rem;">
                     <img src="${src}" class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column align-items-center">
                         <h5 class="card-title">${element.name}</h5>

@@ -34,10 +34,10 @@
 
 .main{
     width: 100%;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .meio{
@@ -102,10 +102,6 @@ h2{
     width: 100%;
 }
 
-.maximo2{
-    width: 85%;
-}
-
 .redod{
     border-radius: 5px;
     border: none;
@@ -124,6 +120,7 @@ h6{
     display: flex;
     width: 90%;
     flex-direction: column;
+    align-self: center;
 }
 
 .info{
@@ -131,6 +128,8 @@ h6{
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .info2{
@@ -139,19 +138,23 @@ h6{
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .metas{
     display: flex;
     flex-direction: column;
     width: 40%;
+    min-width: 240px;
     gap: 20px;
 }
 
 .metas2{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 40%;
+    min-width: 330px;
     gap: 25px;
 }
 
@@ -175,7 +178,7 @@ h6{
     text-align: center;
     border-radius: 8px;
     color: #07A37E;
-    width: 80%;
+    width: 75%;
 }
 
 .centrol{
@@ -189,8 +192,9 @@ h6{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
     gap: 20px;
+
 }
 
 .metade{
@@ -211,36 +215,6 @@ h6{
     text-align: start;
 }
 
-.visualizar2 {
-    background-color: #07A37E;
-    border: 1px solid #07A37E;
-    color: white;
-    padding: 7px;
-    padding-top: 15px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    max-width: 240px;
-    width: 100%;
-    margin-bottom: 30px;
-    height: 40px;
-}
-
-.visualizar2 > h5 {
-    color: white;
-}
-
-.visualizar2:hover{
-    scale: 1.05;
-    background-color: #119173;
-}
-
-.h5{
-    color: white;
-}
-
 .paz{
     display: flex;
     flex-direction: row;
@@ -257,11 +231,39 @@ h6{
     font-weight: bold;
     background-color: #e45555;
     color: #ffffff;
-    display: flex;
-    justify-content: center;
 }
 
 .excloi:hover{
     scale: 1.05;
     background-color: rgb(214, 48, 48);
+}
+
+.maximo2{
+    width: 85%;
+}
+
+.visualizar2 > h5 {
+    color: white;
+}
+
+.visualizar2:hover{
+    scale: 1.05;
+    background-color: #119173;
+}
+
+.visualizar2 {
+    background-color: #07A37E;
+    border: 1px solid #07A37E;
+    color: white;
+    padding: 7px;
+    padding-top: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 240px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 40px;
 }
