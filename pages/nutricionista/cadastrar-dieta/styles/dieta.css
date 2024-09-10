@@ -105,7 +105,7 @@ h2{
 .redod{
     border-radius: 5px;
     border: none;
-    background-color: #E8E8E8;
+    background-color: var(--redod);
     height: 40px;
     padding-left: 20px;
 }
@@ -225,7 +225,7 @@ h6{
 .excloi{
     border-radius: 15%;
     border: none;
-    width: 10%;
+    max-width: 40px;
     min-width: 40px;
     font-size: 1.75rem;
     font-weight: bold;

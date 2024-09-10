@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let body = document.body
 
     if (localStorage.getItem("darkMode") == "true" ) {
-
+        document.documentElement.style.setProperty('--redod', 'var(--redark)')
+        document.documentElement.style.setProperty('--vizu', 'var(--vizudark)')
         body.setAttribute("data-bs-theme", "dark") 
     } else {
         body.setAttribute("data-bs-theme", "light") 
