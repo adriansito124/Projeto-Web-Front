@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .meio{
@@ -127,6 +128,8 @@ h6{
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .info2{
@@ -135,19 +138,23 @@ h6{
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .metas{
     display: flex;
     flex-direction: column;
     width: 40%;
+    min-width: 240px;
     gap: 20px;
 }
 
 .metas2{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 40%;
+    min-width: 330px;
     gap: 25px;
 }
 
@@ -185,8 +192,9 @@ h6{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
     gap: 20px;
+
 }
 
 .metade{
