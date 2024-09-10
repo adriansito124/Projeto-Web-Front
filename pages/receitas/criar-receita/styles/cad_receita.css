@@ -88,7 +88,7 @@
 .redod{
     border-radius: 5px;
     border: none;
-    background-color: #E8E8E8;
+    background-color: var(--redod);
     height: 40px;
     padding-left: 20px;
 }
@@ -96,7 +96,7 @@
 .redod2{
     border-radius: 5px;
     border: none;
-    background-color: #E8E8E8;
+    background-color: var(--redod);
     height: 40px;
     padding-left: 10px;
 }
@@ -197,17 +197,17 @@ h6{
 
 .form-select {
     width: 15%;
-    background-color: #E8E8E8;
+    background-color: var(--redod);
 }
 
 .form-control {
-    background-color: #E8E8E8;
+    background-color: var(--redod);
     font-size: 1.2rem;
 }
 
 .form-control:focus {
 
-    background-color: #E8E8E8;
+    background-color: var(--redod);
 }
 
 #quanti {
