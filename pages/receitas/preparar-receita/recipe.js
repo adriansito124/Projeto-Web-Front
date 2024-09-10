@@ -17,8 +17,8 @@ export async function renderRecipe(event) {
     recipe.RecipeIngredients.forEach( element => {
         ing.insertAdjacentHTML("beforeend", `
             <div class="d-flex flex-row gap-3">
+            <h4>${element.quantity} <span>${element.measureSystem}</span></h4>
                 <h4>${element.name} </h4>
-                <h4>${element.quantity} g</h4>
             </div>
         `)
     });
