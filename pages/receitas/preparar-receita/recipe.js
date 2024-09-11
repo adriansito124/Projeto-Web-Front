@@ -25,16 +25,36 @@ export async function renderRecipe(event) {
 
     let step = document.getElementById("step-id")
 
-    recipe.RecipeSteps.forEach( element => {
-        step.insertAdjacentHTML("beforeend", `
-            <div class="d-flex flex-row gap-3">
-                <h4>${element.stepNumber}. </h4>
-                <h4>${element.description}</h4>
-            </div>
-        `)
-    });
+    if (recipe.RecipeSteps.length == 0) {
+        step.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary w-25 text-center" role="alert">Sem passo-a-passso cadastrado.</p>`)
+    } else {
 
-}
+        recipe.RecipeSteps.forEach( element => {
+            step.insertAdjacentHTML("beforeend", `
+                <div class="d-flex flex-row gap-3">
+                    <h4>${element.stepNumber}. </h4>
+                    <h4>${element.description}</h4>
+                </div>
+            `)
+        });
+    }
+
+    let obs = document.getElementById("obs")
+
+
+    if (recipe.obs = null) {
+        obs.insertAdjacentHTML("beforeend", `<p id="no-nutri" class="alert alert-primary w-25 text-center" role="alert">Sem observações cadastradas.</p>`)
+    } else {
+
+            obs.insertAdjacentHTML("beforeend", `
+                <div class="d-flex flex-row gap-3">
+                    <h4>${recipe.description}</h4>
+                </div>
+            `)
+        };
+    }
+
+
 
 
 document.addEventListener("DOMContentLoaded", renderRecipe)

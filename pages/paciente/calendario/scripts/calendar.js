@@ -187,7 +187,7 @@ async function renderList() {
     if(list.result.lenght == 0 ) {
         divList.insertAdjacentHTML("beforeend", 
             `
-            <p id="no-nutri" class="alert alert-primary" role="alert">Sem planejamento para essa semana!</p>
+            <p id="no-nutri" class="alert alert-primary text-center" role="alert">Sem planejamento para essa semana!</p>
 
             `
         )

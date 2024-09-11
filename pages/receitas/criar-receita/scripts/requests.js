@@ -22,6 +22,7 @@ export async function postReceita(event) {
     console.log("oioiooioi");
 
     const name = document.getElementById("nome_receita").value
+    const descricao = document.getElementById("observacao").value
 
     if (name == "" ) {
         alert("Por favor, insira ao menos o nome da receita para continuar.")
@@ -40,6 +41,7 @@ export async function postReceita(event) {
     
                 body: JSON.stringify({
                     name: name,
+                    description: descricao,
                     ingredients: ingredientes,
                     steps: passos,
                     picture: imageUrl
