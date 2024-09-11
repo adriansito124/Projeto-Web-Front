@@ -25,10 +25,6 @@ async function renderizarNutri() {
                             <h5 class="card-title">${nutri.name}</h5>
                             <h5 class="card-title">${nutri.Nutricionist.CRN}</h5>
                             <div id="action-buttons">
-                                <form id="dataForm" action="../editar-nutricionista/" method="GET">
-                                    <button type="submit" class="btn visualizar2">EDITAR</button>
-                                    <input type="hidden" name="nutriID" value="${nutri.userID}">
-                                </form>
                                 <button onclick="deleteNutri(${nutri.userID})" class="btn btn-danger">DELETAR</button>
                             </div>
                         </div>
