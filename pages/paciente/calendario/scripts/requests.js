@@ -210,7 +210,7 @@ export async function updatePlanning() {
     
 }
 
-export async function getList() {
+export async function   getList() {
 
     let date = dayjs(document.getElementById("date-input").value, 'DD/MM/YYYY')
 

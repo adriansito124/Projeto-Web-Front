@@ -182,7 +182,9 @@ async function renderList() {
 
     let divList = document.getElementById("list")
 
-    if(list.result == []) {
+    divList.innerHTML = ""
+
+    if(list.result.lenght == 0 ) {
         divList.insertAdjacentHTML("beforeend", 
             `
             <p id="no-nutri" class="alert alert-primary" role="alert">Sem planejamento para essa semana!</p>
@@ -190,7 +192,6 @@ async function renderList() {
             `
         )
     }
-
     list.result.forEach( (item, index) => {
         divList.insertAdjacentHTML("beforeend", 
             `
@@ -220,6 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document
     .getElementById("date-input")
-    .addEventListener("change", renderCalendar);
+    .addEventListener("change", () => {
+        renderCalendar(); 
+        renderList()
+    });
 
 
