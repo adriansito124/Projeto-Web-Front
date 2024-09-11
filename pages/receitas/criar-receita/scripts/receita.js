@@ -51,9 +51,9 @@ function atualizarIngredientes() {
     ingredientes.forEach((ingrediente, index) => {
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}</div>
-                <div class="max2 redod reto" type="text">${ingrediente.name}</div>
-                <button onclick="deletarIngrediente(${index})" class="excluir">X</button>
+            <div class="max2 redod reto" type="text">${ingrediente.name}</div>
+                    <div id="qtd" class="min redod2 reto2" type="number">${ingrediente.quantity}  ${ingrediente.measure} </div>
+                    <button onclick="deletarIngrediente(${index})" class="excluir">X</button>
             </div>`
         )
     });
@@ -98,7 +98,7 @@ function deletarPasso(index) {
 
         colunas.insertAdjacentHTML("beforeend",
             `<div class="linha">
-                <div class="max redod reto" type="text">${i+1}- ${passo}</div>
+                <div class="max redod reto" type="text">${i+1}- ${passo.description}</div>
                 <button onclick="deletarPasso(${i})" class="excluir">X</button>
             </div>`
         )
